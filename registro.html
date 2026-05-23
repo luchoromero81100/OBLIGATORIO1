@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro - Postulantes</title>
+</head>
+<body>
+    <h1>Crear cuenta de Postulante</h1>
+    <form id="formRegistro">
+        <label>Nombre Completo:</label><br>
+        <input type="text" id="txtNombreCompleto"><br><br>
+
+        <label>Nombre de Usuario (Mínimo 5 caracteres):</label><br>
+        <input type="text" id="txtUsuario"><br><br>
+
+        <label>Contraseña (Mayúscula, minúscula y número):</label><br>
+        <input type="password" id="txtPassword"><br><br>
+
+        <label>Nivel de Experiencia:</label><br>
+        <select id="slcNivel">
+            <option value="Junior">Junior</option>
+            <option value="Semi-Senior">Semi-Senior</option>
+            <option value="Senior">Senior</option>
+        </select><br><br>
+
+        <label>Área de Interés:</label><br>
+        <select id="slcArea">
+            <option value="Tecnología">Tecnología</option>
+            <option value="Diseño">Diseño</option>
+            <option value="Marketing">Marketing</option>
+            <option value="Administración">Administración</option>
+            <option value="Otros">Otros</option>
+        </select><br><br>
+
+        <button type="button" id="btnRegistrar">Registrarme</button>
+    </form>
+    <p id="pMensajeRegistro"></p>
+    <a href="login.html">Ya tengo cuenta</a>
+</body>
+</html>
