@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ofertas - Cartelera Laboral</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body class="pagina-interna">
+    <nav>
+        <a href="mis_postulaciones.html">Mis Postulaciones</a> | 
+        <a href="ofertas_destacadas.html">Ofertas Destacadas</a> | 
+        <a href="login.html">Cerrar Sesión</a>  <!-- Acá  solo vuelvo atras, despues la funcion del login por ahora solo sustituye los datos del login, tipo los sobreescribe-->
+    </nav>
+    
+    <div class="contenedor">
+        <h1>Ofertas laborales disponibles</h1>
+        
+        <table class="tabla">
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Empresa</th>
+                    <th>Descripción</th>
+                    <th>Nivel requerido</th>
+                    <th>Área</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody id="tbodyOfertasPostulante">
+            </tbody>
+        </table>
+    </div>
+
+    <script src="js/ofertas.js"></script>
+</body>
+</html>
