@@ -2,39 +2,76 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Registro - Postulantes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobHunter - Registro</title>
+    <link rel="stylesheet" href="estilos.css">
 </head>
-<body>
-    <h1>Crear cuenta de Postulante</h1>
-    <form id="formRegistro">
-        <label>Nombre Completo:</label><br>
-        <input type="text" id="txtNombreCompleto"><br><br>
+<body class="pagina-interna">
 
-        <label>Nombre de Usuario (Mínimo 5 caracteres):</label><br>
-        <input type="text" id="txtUsuario"><br><br>
+    <header>
+        <nav>
+            <a href="index.html">Inicio</a> | 
+            <a href="login.html">Iniciar Sesión</a> | 
+            <a href="registro.html">Crear Cuenta</a> |
+            <a href="ofertas.html">Caza de Trabajo</a>
+        </nav>
+    </header>
 
-        <label>Contraseña (Mayúscula, minúscula y número):</label><br>
-        <input type="password" id="txtPassword"><br><br>
+    <div class="contenedor">
+        <h1>Únete a la Caza</h1>
+        <p class="subtitulo">Crea tu cuenta de postulante para empezar.</p>
 
-        <label>Nivel de Experiencia:</label><br>
-        <select id="slcNivel">
-            <option value="Junior">Junior</option>
-            <option value="Semi-Senior">Semi-Senior</option>
-            <option value="Senior">Senior</option>
-        </select><br><br>
+        <div class="card">
+            <h2>Crear cuenta</h2>
+            <form id="formRegistro">
+                <div class="campo">
+                    <label for="txtNombreCompleto">Nombre Completo:</label>
+                    <input type="text" id="txtNombreCompleto" placeholder="Ej: Juan Pérez">
+                </div>
 
-        <label>Área de Interés:</label><br>
-        <select id="slcArea">
-            <option value="Tecnología">Tecnología</option>
-            <option value="Diseño">Diseño</option>
-            <option value="Marketing">Marketing</option>
-            <option value="Administración">Administración</option>
-            <option value="Otros">Otros</option>
-        </select><br><br>
+                <div class="campo">
+                    <label for="txtUsuario">Nombre de Usuario:</label>
+                    <small>(Mínimo 5 caracteres)</small>
+                    <input type="text" id="txtUsuario" placeholder="usuario123">
+                </div>
 
-        <button type="button" id="btnRegistrar">Registrarme</button>
-    </form>
-    <p id="pMensajeRegistro"></p>
-    <a href="login.html">Ya tengo cuenta</a>
+                <div class="campo">
+                    <label for="txtPassword">Contraseña:</label>
+                    <small>(Debe incluir Mayúscula, minúscula y número)</small>
+                    <input type="password" id="txtPassword" placeholder="********">
+                </div>
+
+                <div class="campo">
+                    <label for="slcNivel">Nivel de Experiencia:</label>
+                    <select id="slcNivel">
+                        <option value="Junior">Junior</option>
+                        <option value="Semi-Senior">Semi-Senior</option>
+                        <option value="Senior">Senior</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="slcArea">Área de Interés:</label>
+                    <select id="slcArea">
+                        <option value="Tecnología">Tecnología</option>
+                        <option value="Diseño">Diseño</option>
+                        <option value="Marketing">Marketing</option>
+                        <option value="Administración">Administración</option>
+                        <option value="Otros">Otros</option>
+                    </select>
+                </div>
+
+                <button type="button" id="btnRegistrar" class="btn-principal">Registrarme</button>
+            </form>
+
+            <p id="pMensajeRegistro" class="mensaje-feedback"></p>
+            
+            <hr>
+            <p>¿Ya tienes cuenta? <a href="login.html">Inicia sesión aquí</a></p>
+        </div>
+    </div>
+
+    <script src="js/datos.js"></script>
+    <script src="js/registro.js"></script>
 </body>
 </html>

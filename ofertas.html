@@ -2,33 +2,53 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title> Laborales</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobHunter - Ofertas Laborales</title>
+    <link rel="stylesheet" href="estilos.css">
 </head>
-<body>
-    <h1>Ofertas Disponibles</h1>
-    <p>Ofertas especialmente pensadas para ti y tu perfil:</p>
-    
-    <div id="contenedorOfertas">
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>Título</th>
-                    <th>Empresa</th>
-                    <th>Área</th>
-                    <th>Acción</th>
-                
-                </tr>
-            </thead>
-            <tbody id="tablaOfertas">
-                </tbody>
-        </table>
+<body class="pagina-interna">
+
+    <header>
+        <nav>
+            <a href="index.html">Inicio</a> | 
+            <a href="login.html">Iniciar Sesión</a> | 
+            <a href="registro.html">Crear Cuenta</a> |
+            <a href="ofertas.html">Caza de Trabajo</a>
+        </nav>
+    </header>
+
+    <div class="contenedor">
+        <h1>Cazas Disponibles</h1>
+        <p class="subtitulo">Ofertas especialmente pensadas para ti y tu perfil.</p>
+
+        <div class="card">
+            <div id="contenedorOfertas">
+                <table class="tabla">
+                    <thead>
+                        <tr>
+                            <th>Título</th>
+                            <th>Empresa</th>
+                            <th>Área</th>
+                            <th>Estado/Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaOfertas">
+                        </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="card mt-3">
+            <h3>Navegación Rápida</h3>
+            <nav class="nav-secundario">
+                <a href="ofertas_destacadas.html">Ver Ofertas Destacadas</a> |       
+                <a href="mis_postulaciones.html">Ver Mis Postulaciones</a> |
+                <a href="login.html" class="link-alerta">Cerrar Sesión</a>
+            </nav>
+        </div>
     </div>
 
-    <br>
-    <nav>
-        <a href="ofertas_destacadas.html">Ver Ofertas Destacadas</a> |      
-        <a href="postulaciones_activas.html">Ver Mis Postulaciones</a> |
-        <a href="login.html">Cerrar Sesión</a>
-    </nav>
+    <script src="js/datos.js"></script>
+    <script src="js/ofertas.js"></script>
 </body>
 </html>

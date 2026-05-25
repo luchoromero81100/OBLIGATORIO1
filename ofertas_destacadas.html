@@ -2,15 +2,34 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Ofertas Destacadas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobHunter - Ofertas Destacadas</title>
+    <link rel="stylesheet" href="estilos.css">
 </head>
-<body>
-    <h1>⭐ Trabajos con alta demanda y urgencia! ⭐</h1>
-    
-    <div id="listaDestacadas">
-        </div>
+<body class="pagina-interna">
 
-    <br>
-    <a href="ofertas.html">Actualizar ofertas.</a>
+    <header>
+        <nav>
+            <a href="index.html">Inicio</a> | 
+            <a href="login.html">Iniciar Sesión</a> | 
+            <a href="registro.html">Crear Cuenta</a> |
+            <a href="ofertas.html">Caza de Trabajo</a>
+        </nav>
+    </header>
+
+    <div class="contenedor">
+        <h1>⭐ Objetivos con alta demanda y urgencia ⭐</h1>
+        <p class="subtitulo">Estas ofertas requieren atención inmediata y ofrecen mejores recompensas.</p>
+
+        <div id="listaDestacadas" class="grid-destacados">
+            </div>
+
+        <div class="mt-3">
+            <a href="ofertas.html" class="btn-secundario">← Volver al listado general</a>
+        </div>
+    </div>
+
+    <script src="js/datos.js"></script>
+    <script src="js/ofertas_destacadas.js"></script>
 </body>
 </html>
