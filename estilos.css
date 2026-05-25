@@ -409,3 +409,111 @@ hr {
     display: block;
     line-height: 1.4;
 }
+
+
+/* Centrado general de texto para encabezados */
+.text-center {
+    text-align: center;
+}
+
+.cabecera-seccion {
+    margin-bottom: 30px;
+}
+
+/* Limita el ancho del formulario para que no se vea gigante en PC */
+.form-card {
+    max-width: 500px;
+    margin: 0 auto; /* Centra la tarjeta horizontalmente */
+    padding: 30px;
+}
+
+/* Mejora visual de los inputs */
+input[type="text"], 
+input[type="password"], 
+select {
+    width: 100%;
+    box-sizing: border-box; /* Asegura que el padding no rompa el ancho */
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease; /* Transición suave */
+    background-color: #fcfcfc;
+}
+
+/* Efecto al hacer clic (focus) en la caja de texto */
+input[type="text"]:focus, 
+input[type="password"]:focus, 
+select:focus {
+    border-color: #007bff; /* Borde azul */
+    outline: none;
+    background-color: #ffffff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2); /* Resplandor azul */
+}
+
+/* Estilos de las etiquetas (Labels) */
+.campo label {
+    font-weight: 600;
+    color: #333;
+    display: block;
+    margin-bottom: 6px;
+}
+
+/* Textos de ayuda debajo de los inputs */
+.ayuda-input {
+    display: block;
+    color: #888;
+    font-size: 0.8em;
+    margin-top: 4px;
+}
+
+/* Poner los selectores uno al lado del otro en pantallas grandes */
+.flex-row {
+    display: flex;
+    gap: 15px;
+}
+
+.mitad {
+    flex: 1;
+}
+
+/* Ajustes del botón */
+.btn-principal {
+    background-color: #28a745;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    width: 100%;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.btn-principal:hover {
+    background-color: #218838;
+}
+
+.btn-principal:active {
+    transform: scale(0.98); /* Efecto de "hundimiento" al hacer clic */
+}
+
+/* Link destacado al final */
+.link-destacado {
+    color: #007bff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.link-destacado:hover {
+    text-decoration: underline;
+}
+
+/* Responsive: en celulares los selectores vuelven a estar uno debajo del otro */
+@media (max-width: 500px) {
+    .flex-row {
+        flex-direction: column;
+        gap: 0;
+    }
+}
