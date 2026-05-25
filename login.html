@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - Sistema</title>
+</head>
+<body>
+    <h1>Ingresar Sesion para comenzar la búsqueda.</h1>
+    <form id="formLogin">
+        <label>Usuario:</label><br>
+        <input type="text" id="txtUserLogin"><br><br>
+
+        <label>Contraseña:</label><br>
+        <input type="password" id="txtPassLogin"><br><br>
+
+        <button type="button" id="btnLogin">Ingresar</button>
+    </form>
+    <p id="pErrorLogin"></p>
+    <p>¿Eres nuevo? <a href="registro.html">Regístrate aquí</a></p>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - Cartelera Laboral</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body class="pagina-login">
+    <div class="card card-login">
+        <h1 class="texto-centrado">Iniciar Sesión</h1>
+        
+        <div class="form-grupo">
+            <label for="txtUserLogin">Usuario:</label>
+            <input type="text" id="txtUserLogin" class="form-control">
+        </div>
+        
+        <div class="form-grupo">
+            <label for="txtPassLogin">Contraseña:</label>
+            <input type="password" id="txtPassLogin" class="form-control">
+        </div>
+        
+        <button id="btnLogin" class="boton" style="width: 100%;">Ingresar</button>
+        
+        <div id="pErrorLogin" class="mensaje-error mt-2" style="display: none;"></div>
+        
+        <p class="texto-centrado mt-3">¿No tenés cuenta? <a href="registro.html">Registrate acá</a></p>
+    </div>
+
+    <script src="js/usuarios.js"></script>
+    <script src="js/login.js"></script>
+</body>
+</html>
