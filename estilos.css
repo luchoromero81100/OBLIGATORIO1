@@ -1,519 +1,1277 @@
-/* 
+/*
+
  * Estilos CSS para Cartelera Laboral
+
  * Inspirado en LinkedIn - Estilo profesional
+
  */
 
+
+
 body {
+
     font-family: Arial, Helvetica, sans-serif;
+
     background-color: #F3F2EF;
+
     color: #1F1F1F;
+
     line-height: 1.6;
+
     padding: 0;
+
     margin: 0;
+
     min-height: 100vh;
+
 }
+
+
 
 /* Textos */
+
 h1, h2, h3 {
+
     color: #1F1F1F;
+
     margin-bottom: 1rem;
+
     font-weight: 600;
+
 }
+
+
 
 h1 {
+
     font-size: 2rem;
+
     margin-bottom: 1.5rem;
+
 }
+
+
 
 h2 {
+
     font-size: 1.5rem;
+
 }
+
+
 
 h3 {
+
     font-size: 1.2rem;
+
 }
+
+
 
 p {
+
     margin-bottom: 1rem;
+
     color: #666666;
+
 }
+
+
 
 /* Enlaces */
+
 a {
+
     color: #0A66C2;
+
     text-decoration: none;
+
     transition: color 0.2s;
+
 }
+
+
 
 a:hover {
+
     color: #004182;
+
     text-decoration: underline;
+
 }
+
+
 
 /* Contenedores principales */
+
 .contenedor {
+
     max-width: 1200px;
+
     margin: 0 auto;
+
     padding: 0 1rem;
+
 }
+
+
 
 .contenedor-pequeno {
+
     max-width: 500px;
+
     margin: 0 auto;
+
     padding: 0 1rem;
+
 }
+
+
 
 /* Menu nav */
+
 nav {
+
     background-color: #FFFFFF;
+
     padding: 1rem 2rem;
+
     border-bottom: 1px solid #D0D0D0;
+
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
 }
+
+
 
 nav a {
+
     margin-right: 1.5rem;
+
     font-weight: 500;
+
 }
+
+
 
 nav a:last-child {
+
     margin-right: 0;
+
 }
+
+
 
 /* Cards */
+
 .card {
+
     background-color: #FFFFFF;
+
     border-radius: 8px;
+
     padding: 2rem;
+
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
     border: 1px solid #D0D0D0;
+
     margin-bottom: 1.5rem;
+
 }
+
+
 
 .card-login {
+
     max-width: 400px;
+
     margin: 3rem auto;
+
     padding: 2.5rem;
+
 }
+
+
 
 /* ===== FORMULARIOS ===== */
+
 .form-grupo {
+
     margin-bottom: 1.5rem;
+
 }
+
+
 
 .form-grupo label {
+
     display: block;
+
     margin-bottom: 0.5rem;
+
     font-weight: 500;
+
     color: #1F1F1F;
+
 }
+
+
 
 .form-grupo input,
+
 .form-grupo select,
+
 .form-grupo textarea {
+
     width: 100%;
+
     padding: 0.75rem;
+
     border: 1px solid #D0D0D0;
+
     border-radius: 4px;
+
     font-size: 1rem;
+
     font-family: Arial, Helvetica, sans-serif;
+
     transition: border-color 0.2s;
+
 }
+
+
 
 .form-grupo input:focus,
+
 .form-grupo select:focus,
+
 .form-grupo textarea:focus {
+
     outline: none;
+
     border-color: #0A66C2;
+
     box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.1);
+
 }
+
+
 
 .form-grupo textarea {
+
     min-height: 100px;
+
     resize: vertical;
+
 }
+
+
 
 /* ===== BOTONES ===== */
+
 .boton {
+
     background-color: #0A66C2;
+
     color: #FFFFFF;
+
     border: none;
+
     border-radius: 24px;
+
     padding: 0.75rem 1.5rem;
+
     font-size: 1rem;
+
     font-weight: 600;
+
     cursor: pointer;
+
     transition: background-color 0.2s;
+
     display: inline-block;
+
     text-align: center;
+
 }
+
+
 
 .boton:hover {
+
     background-color: #004182;
+
     text-decoration: none;
+
 }
+
+
 
 .boton:active {
+
     background-color: #003366;
+
 }
+
+
 
 .boton-secundario {
+
     background-color: transparent;
+
     color: #0A66C2;
+
     border: 1px solid #0A66C2;
+
 }
+
+
 
 .boton-secundario:hover {
+
     background-color: rgba(10, 102, 194, 0.05);
+
 }
+
+
 
 .boton-pequeno {
+
     padding: 0.5rem 1rem;
+
     font-size: 0.9rem;
+
 }
+
+
 
 /* ===== TABLAS ===== */
+
 .tabla {
+
     width: 100%;
+
     border-collapse: collapse;
+
     background-color: #FFFFFF;
+
     border-radius: 8px;
+
     overflow: hidden;
+
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
 }
+
+
 
 .tabla th {
+
     background-color: #F3F2EF;
+
     color: #1F1F1F;
+
     font-weight: 600;
+
     text-align: left;
+
     padding: 1rem;
+
     border-bottom: 2px solid #D0D0D0;
+
 }
+
+
 
 .tabla td {
+
     padding: 1rem;
+
     border-bottom: 1px solid #D0D0D0;
+
     color: #666666;
+
 }
+
+
 
 .tabla tr:last-child td {
+
     border-bottom: none;
+
 }
+
+
 
 .tabla tr:hover {
+
     background-color: rgba(10, 102, 194, 0.02);
+
 }
+
+
 
 .tabla button {
+
     margin: 1px;
+
     background-color: #0A66C2;
+
     color: #FFFFFF;
+
     border: none;
+
     border-radius: 4px;
+
     padding: 0.5rem 1rem;
+
     font-size: 0.9rem;
+
     cursor: pointer;
+
     transition: background-color 0.2s;
+
 }
+
+
 
 .tabla button:hover {
+
     background-color: #004182;
+
 }
+
+
 
 /* ===== MENSAJES ===== */
+
 .mensaje-error {
+
     background-color: rgba(176, 0, 32, 0.1);
+
     color: #B00020;
+
     padding: 1rem;
+
     border-radius: 4px;
+
     border-left: 4px solid #B00020;
+
     margin-bottom: 1.5rem;
+
 }
 
+
+
 .mensaje-exito {
+
     background-color: rgba(5, 118, 66, 0.1);
+
     color: #057642;
+
     padding: 1rem;
+
     border-radius: 4px;
+
     border-left: 4px solid #057642;
+
     margin-bottom: 1.5rem;
+
 }
+
+
+
+/* login */
 
 /* login */
 .pagina-login {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    /* Eliminamos el display: flex del body para que no afecte al header */
     min-height: 100vh;
     background-color: #F3F2EF;
 }
 
-/* ===== PÁGINAS INTERNAS ===== */
-.pagina-interna {
-    padding: 2rem 0;
+/* Forzamos que el contenido del login se centre sin romper el header */
+.contenedor-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 80px); /* Restamos la altura aproximada del header */
 }
 
-.pagina-interna h1 {
-    margin-bottom: 2rem;
+
+
+/* ===== PÁGINAS INTERNAS ===== */
+
+.pagina-interna {
+
+    padding: 2rem 0;
+
 }
+
+
+
+.pagina-interna h1 {
+
+    margin-bottom: 2rem;
+
+}
+
+
+
 
 
 /* utilidadaes */
+
 .texto-centrado {
+
     text-align: center;
+
 }
+
+
 
 .mt-1 { margin-top: 0.5rem; }
+
 .mt-2 { margin-top: 1rem; }
+
 .mt-3 { margin-top: 1.5rem; }
+
 .mt-4 { margin-top: 2rem; }
 
+
+
 .mb-1 { margin-bottom: 0.5rem; }
+
 .mb-2 { margin-bottom: 1rem; }
+
 .mb-3 { margin-bottom: 1.5rem; }
+
 .mb-4 { margin-bottom: 2rem; }
 
+
+
 /* otros */
+
 #pErrorLogin {
+
     margin-top: 1rem;
+
 }
+
+
 
 /* Para tablas existentes con border="1" */
+
 table[border="1"] {
+
     border: none;
+
     border-collapse: collapse;
+
     width: 100%;
+
     background-color: #FFFFFF;
+
     border-radius: 8px;
+
     overflow: hidden;
+
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
 }
+
+
 
 table[border="1"] th {
+
     background-color: #F3F2EF;
+
     color: #1F1F1F;
+
     font-weight: 600;
+
     text-align: left;
+
     padding: 1rem;
+
     border-bottom: 2px solid #D0D0D0;
+
 }
+
+
 
 table[border="1"] td {
+
     padding: 1rem;
+
     border-bottom: 1px solid #D0D0D0;
+
     color: #666666;
+
 }
+
+
 
 table[border="1"] tr:last-child td {
+
     border-bottom: none;
+
 }
+
+
 
 table[border="1"] tr:hover {
+
     background-color: rgba(10, 102, 194, 0.02);
+
 }
+
+
 
 table[border="1"] button {
+
     background-color: #0A66C2;
+
     color: #FFFFFF;
+
     border: none;
+
     border-radius: 4px;
+
     padding: 0.5rem 1rem;
+
     font-size: 0.9rem;
+
     cursor: pointer;
+
     transition: background-color 0.2s;
+
 }
+
+
 
 table[border="1"] button:hover {
+
     background-color: #004182;
+
 }
+
+
 
 /* Para hr existentes */
+
 hr {
+
     border: none;
+
     border-top: 1px solid #D0D0D0;
+
     margin: 1rem 0;
+
 }
+
 /* GERO: Esto es lo que hace la magia del menú a la derecha */
+
 .navbar {
+
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
+
     padding: 20px 50px;
+
 }
+
+
 
 .nav-links {
+
     display: flex;
+
     list-style: none;
+
     gap: 20px;
+
     margin: 0;
+
 }
+
 /* GERO: Esto es lo que ajusta el tamanio de las imagenes que agreguemos*/
+
 .img-fluida {
+
     max-width: 100%;
+
     height: auto;
+
     border-radius: 8px; /* Opcional, para bordes redondeados */
+
     display: block;
+
 }
+
+
 
 /* Centra todo el menú secundario */
+
 .nav-secundario {
-    text-align: center; 
+
+    text-align: center;
+
 }
+
+
 
 /* Le da el mismo espacio a cada lado de las palabras */
+
 .nav-secundario a {
+
     margin: 0 10px; /* 0 arriba/abajo, 10px izquierda/derecha */
+
     text-decoration: none; /* Opcional: quita el subrayado si quieres */
+
 }
+
+
 
 /* Reset de la lista para quitar los puntos por defecto */
+
 .lista-descrita {
+
     list-style: none;
+
     padding: 0;
+
     margin: 0;
+
 }
+
+
 
 /* Diseño de cada ítem del menú como una "mini-tarjeta" */
+
 .lista-descrita li {
+
     background-color: #f8f9fa; /* Fondo gris muy clarito */
+
     border-left: 4px solid #007bff; /* Acento azul a la izquierda */
+
     margin-bottom: 15px;
+
     padding: 15px 20px;
+
     border-radius: 0 6px 6px 0; /* Bordes redondeados excepto donde está la línea azul */
+
     transition: all 0.3s ease; /* Hace que cualquier cambio sea suave */
+
     box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Sombra súper sutil */
+
 }
+
+
 
 /* Efecto mágico al pasar el mouse (Hover) */
+
 .lista-descrita li:hover {
+
     transform: translateX(8px); /* Desplaza el elemento un poquito hacia la derecha */
+
     background-color: #ffffff; /* Aclara el fondo */
+
     box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Hace la sombra un poco más grande */
+
     border-left-color: #28a745; /* La línea cambia a verde "JobHunter" */
+
 }
+
+
 
 /* Estilo para el enlace principal (el título) */
+
 .lista-descrita a {
+
     text-decoration: none;
+
     color: #2c3e50; /* Azul oscuro elegante */
+
     font-size: 1.15em;
-    display: block; 
+
+    display: block;
+
     margin-bottom: 5px;
+
 }
 
+
+
 /* Estilo para la descripción debajo del enlace */
+
 .lista-descrita span {
+
     color: #6c757d;
+
     font-size: 0.9em;
+
     display: block;
+
     line-height: 1.4;
+
 }
+
+
+
 
 
 /* Centrado general de texto para encabezados */
+
 .text-center {
+
     text-align: center;
+
 }
+
+
 
 .cabecera-seccion {
+
     margin-bottom: 30px;
+
 }
+
+
 
 /* Limita el ancho del formulario para que no se vea gigante en PC */
+
 .form-card {
+
     max-width: 500px;
+
     margin: 0 auto; /* Centra la tarjeta horizontalmente */
+
     padding: 30px;
+
 }
+
+
 
 /* Mejora visual de los inputs */
-input[type="text"], 
-input[type="password"], 
+
+input[type="text"],
+
+input[type="password"],
+
 select {
+
     width: 100%;
+
     box-sizing: border-box; /* Asegura que el padding no rompa el ancho */
+
     padding: 12px 15px;
+
     border: 2px solid #e0e0e0;
+
     border-radius: 8px;
+
     font-size: 1rem;
+
     transition: all 0.3s ease; /* Transición suave */
+
     background-color: #fcfcfc;
+
 }
+
+
 
 /* Efecto al hacer clic (focus) en la caja de texto */
-input[type="text"]:focus, 
-input[type="password"]:focus, 
+
+input[type="text"]:focus,
+
+input[type="password"]:focus,
+
 select:focus {
+
     border-color: #007bff; /* Borde azul */
+
     outline: none;
+
     background-color: #ffffff;
+
     box-shadow: 0 0 8px rgba(0, 123, 255, 0.2); /* Resplandor azul */
+
 }
+
+
 
 /* Estilos de las etiquetas (Labels) */
+
 .campo label {
+
     font-weight: 600;
+
     color: #333;
+
     display: block;
+
     margin-bottom: 6px;
+
 }
+
+
 
 /* Textos de ayuda debajo de los inputs */
+
 .ayuda-input {
+
     display: block;
+
     color: #888;
+
     font-size: 0.8em;
+
     margin-top: 4px;
+
 }
+
+
 
 /* Poner los selectores uno al lado del otro en pantallas grandes */
+
 .flex-row {
+
     display: flex;
+
     gap: 15px;
+
 }
+
+
 
 .mitad {
+
     flex: 1;
+
 }
+
+
 
 /* Ajustes del botón */
+
 .btn-principal {
+
     background-color: #28a745;
+
     color: white;
+
     padding: 14px;
+
     border: none;
+
     border-radius: 8px;
+
     cursor: pointer;
+
     font-size: 1.1em;
+
     font-weight: bold;
+
     width: 100%;
+
     transition: background-color 0.3s, transform 0.1s;
+
 }
+
+
 
 .btn-principal:hover {
+
     background-color: #218838;
+
 }
+
+
 
 .btn-principal:active {
+
     transform: scale(0.98); /* Efecto de "hundimiento" al hacer clic */
+
 }
+
+
 
 /* Link destacado al final */
+
 .link-destacado {
+
     color: #007bff;
+
     font-weight: bold;
+
     text-decoration: none;
+
 }
+
+
 
 .link-destacado:hover {
+
     text-decoration: underline;
+
 }
 
+
+
 /* Responsive: en celulares los selectores vuelven a estar uno debajo del otro */
+
 @media (max-width: 500px) {
+
     .flex-row {
+
         flex-direction: column;
+
         gap: 0;
+
     }
+
 }
+
+
+
+/* Rediseño de la tarjeta Hero principal */
+
+.hero.card {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 40px; /* Mayor separación entre el texto y la imagen */
+
+    padding: 50px 40px; /* Espaciado interno generoso para que respire */
+
+    background: linear-gradient(135deg, #ffffff 0%, #f4f8ff 100%); /* Degradado sutil hacia un azul muy limpio */
+
+    border-left: 6px solid #28a745; /* Línea verde de acento característica de JobHunter */
+
+    border-radius: 12px; /* Bordes más suavizados */
+
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06); /* Sombra suave y difuminada */
+
+    margin-bottom: 35px;
+
+    overflow: hidden;
+
+}
+
+
+
+/* Control del bloque de texto */
+
+.hero-content {
+
+    flex: 1.2; /* Le otorga un poco más de prioridad de espacio al texto */
+
+}
+
+
+
+/* Título principal impactante */
+
+.hero-content h1 {
+
+    font-size: 3rem; /* Tamaño destacado */
+
+    color: #2c3e50; /* Tono oscuro corporativo y elegante */
+
+    margin-top: 0;
+
+    margin-bottom: 12px;
+
+    font-weight: 800; /* Tipografía bien gruesa */
+
+    letter-spacing: -0.5px;
+
+}
+
+
+
+/* Subtítulo enfocado en la propuesta de valor */
+
+.hero-content .subtitulo {
+
+    font-size: 1.25rem;
+
+    color: #007bff; /* Azul vibrante para captar la atención */
+
+    font-weight: 600;
+
+    line-height: 1.4;
+
+    margin-bottom: 18px;
+
+}
+
+
+
+/* Párrafo descriptivo */
+
+.hero-content p {
+
+    font-size: 1.05rem;
+
+    color: #5a6a85; /* Gris intermedio para una lectura descansada */
+
+    line-height: 1.6;
+
+    margin-bottom: 0;
+
+}
+
+
+
+/* Bloque contenedor de la imagen */
+
+.hero-image {
+
+    flex: 0.8; /* Espacio compacto bien balanceado */
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+
+
+/* Estilo y efectos de la imagen */
+
+.img-fluida {
+
+    max-width: 100%;
+
+    height: auto;
+
+    border-radius: 8px;
+
+    /* Efecto de sombra proyectada ideal para ilustraciones */
+
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
+
+    transition: transform 0.4s ease; /* Transición suave para la animación */
+
+}
+
+
+
+/* Animación sutil: la imagen reacciona cuando el usuario pasa el mouse sobre el Hero */
+
+.hero.card:hover .img-fluida {
+
+    transform: translateY(-5px) scale(1.02); /* Se eleva y expande sutilmente */
+
+}
+
+
+
+/* Optimización completa para dispositivos móviles */
+
+@media (max-width: 768px) {
+
+    .hero.card {
+
+        flex-direction: column; /* Pasa a diseño vertical en pantallas chicas */
+
+        text-align: center;
+
+        padding: 35px 20px;
+
+        gap: 30px;
+
+    }
+
+   
+
+    .hero-content h1 {
+
+        font-size: 2.2rem;
+
+    }
+
+   
+
+    .hero-content .subtitulo {
+
+        font-size: 1.15rem;
+
+    }
+
+   
+
+    .hero-image {
+
+        max-width: 80%; /* Evita que la imagen quede gigante en celulares */
+
+    }
+
+}
+
+
+
+/* Aseguramos que el texto del logo se vea imponente */
+
+.logo a {
+
+    color: black;
+
+    font-size: 1.6rem;
+
+    font-weight: 800;
+
+    text-decoration: none;
+
+    letter-spacing: 1px;
+
+    display: flex; /* Ayuda a alinear perfectamente la mira con las letras */
+
+    align-items: center;
+
+}
+
+
+
+/* Estilo específico para la letra O transformada en mira */
+
+.mira-logo {
+
+    color: #28a745; /* Color verde de acento */
+
+    font-size: 1.3em; /* Lo hacemos un poquito más grande que la J y la b */
+
+    font-weight: normal; /* Para que el símbolo no se distorsione */
+
+    margin: 0 2px; /* Separación sutil de las otras letras */
+
+    line-height: 1;
+
+    transition: transform 0.4s ease; /* Prepara el elemento para animarse suavemente */
+
+}
+
+
+
+/* Efecto interactivo: la mira gira al pasar el cursor */
+
+.logo a:hover .mira-logo {
+
+    transform: rotate(90deg) scale(1.1); /* Gira 90 grados y se agranda un 10% */
+
+    color: #34ce57; /* Se ilumina a un verde más claro */
+
+} 
+

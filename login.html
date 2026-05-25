@@ -2,28 +2,49 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Login - Cartelera Laboral</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobHunter - Iniciar Sesión</title>
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body class="pagina-login">
-    <div class="card card-login">
-        <h1 class="texto-centrado">Iniciar Sesión</h1>
-        
-        <div class="form-grupo">
-            <label for="txtUserLogin">Usuario:</label>
-            <input type="text" id="txtUserLogin" class="form-control">
+
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">J<span class="mira-logo">⌖</span>bHunter</a>
         </div>
         
-        <div class="form-grupo">
-            <label for="txtPassLogin">Contraseña:</label>
-            <input type="password" id="txtPassLogin" class="form-control">
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="login.html">Iniciar Sesión</a></li>
+            <li><a href="registro.html">Crear Cuenta</a></li>
+            <li><a href="ofertas.html">Caza de Trabajo</a></li>
+        </ul>
+    </nav>
+</header>
+
+    <div class="contenedor mt-3">
+        <div class="card form-card card-login">
+            <h1 class="text-center">Iniciar Sesión</h1>
+            <p class="subtitulo text-center">Ingresa a tu cuenta para continuar la caza.</p>
+            
+            <div class="form-grupo campo mt-3">
+                <label for="txtUserLogin">Usuario:</label>
+                <input type="text" id="txtUserLogin" class="form-control" placeholder="Tu nombre de usuario">
+            </div>
+            
+            <div class="form-grupo campo">
+                <label for="txtPassLogin">Contraseña:</label>
+                <input type="password" id="txtPassLogin" class="form-control" placeholder="********">
+            </div>
+            
+            <button id="btnLogin" class="btn-principal mt-3">Ingresar</button>
+            
+            <div id="pErrorLogin" class="mensaje-error mt-2" style="display: none; color: #dc3545; text-align: center; font-weight: bold;"></div>
+            
+            <hr class="separador">
+            <p class="text-center mt-3">¿No tenés cuenta? <a href="registro.html" class="link-destacado">Registrate acá</a></p>
         </div>
-        
-        <button id="btnLogin" class="boton" style="width: 100%;">Ingresar</button>
-        
-        <div id="pErrorLogin" class="mensaje-error mt-2" style="display: none;"></div>
-        
-        <p class="texto-centrado mt-3">¿No tenés cuenta? <a href="registro.html">Registrate acá</a></p>
     </div>
 
     <script src="js/usuarios.js"></script>
