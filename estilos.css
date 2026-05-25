@@ -355,3 +355,57 @@ hr {
     border-radius: 8px; /* Opcional, para bordes redondeados */
     display: block;
 }
+
+/* Centra todo el menú secundario */
+.nav-secundario {
+    text-align: center; 
+}
+
+/* Le da el mismo espacio a cada lado de las palabras */
+.nav-secundario a {
+    margin: 0 10px; /* 0 arriba/abajo, 10px izquierda/derecha */
+    text-decoration: none; /* Opcional: quita el subrayado si quieres */
+}
+
+/* Reset de la lista para quitar los puntos por defecto */
+.lista-descrita {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Diseño de cada ítem del menú como una "mini-tarjeta" */
+.lista-descrita li {
+    background-color: #f8f9fa; /* Fondo gris muy clarito */
+    border-left: 4px solid #007bff; /* Acento azul a la izquierda */
+    margin-bottom: 15px;
+    padding: 15px 20px;
+    border-radius: 0 6px 6px 0; /* Bordes redondeados excepto donde está la línea azul */
+    transition: all 0.3s ease; /* Hace que cualquier cambio sea suave */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Sombra súper sutil */
+}
+
+/* Efecto mágico al pasar el mouse (Hover) */
+.lista-descrita li:hover {
+    transform: translateX(8px); /* Desplaza el elemento un poquito hacia la derecha */
+    background-color: #ffffff; /* Aclara el fondo */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Hace la sombra un poco más grande */
+    border-left-color: #28a745; /* La línea cambia a verde "JobHunter" */
+}
+
+/* Estilo para el enlace principal (el título) */
+.lista-descrita a {
+    text-decoration: none;
+    color: #2c3e50; /* Azul oscuro elegante */
+    font-size: 1.15em;
+    display: block; 
+    margin-bottom: 5px;
+}
+
+/* Estilo para la descripción debajo del enlace */
+.lista-descrita span {
+    color: #6c757d;
+    font-size: 0.9em;
+    display: block;
+    line-height: 1.4;
+}
