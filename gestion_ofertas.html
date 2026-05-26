@@ -1,38 +1,43 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Gestión de Ofertas - Administrador</title>
     <link rel="stylesheet" href="estilos.css">
 </head>
+
 <body class="pagina-interna">
-    <nav>
-        <a href="mis_postulaciones.html">Postulaciones Activas</a> | 
-        <a href="estadisticas.html">Estadísticas</a> | 
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">J<span class="mira-logo">⌖</span>bHunter</a>
+        </div>
+        <a href="mis_postulaciones.html">Postulaciones Activas</a> |
+        <a href="estadisticas.html">Estadísticas</a> |
         <a href="login.html">Cerrar Sesión</a>
     </nav>
-    
+
     <div class="contenedor">
         <h1>Gestión de ofertas laborales</h1>
-        
+
         <div class="card">
             <h3>Crear nueva oferta</h3>
-            
+
             <div class="form-grupo">
                 <label>Título de la oferta:</label>
                 <input type="text" id="txtTituloOferta">
             </div>
-            
+
             <div class="form-grupo">
                 <label>Nombre de la empresa:</label>
                 <input type="text" id="txtEmpresaOferta">
             </div>
-            
+
             <div class="form-grupo">
                 <label>Descripción de la oferta:</label>
                 <textarea id="txtDescripcionOferta"></textarea>
             </div>
-            
+
             <div class="form-grupo">
                 <label>Nivel requerido:</label>
                 <select id="slcNivelOferta">
@@ -41,7 +46,7 @@
                     <option>Senior</option>
                 </select>
             </div>
-            
+
             <div class="form-grupo">
                 <label>Área:</label>
                 <select id="slcAreaOferta">
@@ -52,51 +57,59 @@
                     <option>Otros</option>
                 </select>
             </div>
-            
+
             <div class="form-grupo">
                 <label>Límite de postulaciones:</label>
                 <input type="number" id="txtLimitePostulaciones">
             </div>
-            
+
             <div class="form-grupo">
                 <label>Cantidad de vacantes:</label>
                 <input type="number" id="txtCantidadVacantes">
             </div>
-            
+
             <div class="form-grupo">
                 <label>
                     <input type="checkbox" id="chkOfertaDestacada"> Oferta destacada
                 </label>
             </div>
-            
+
             <button type="button" id="btnCrearOferta" class="boton">Crear oferta</button>
-            
+
             <p id="pMensajeOferta" class="mt-2"></p>
         </div>
-        
-        <div class="card mt-3">
-            <h3>Ofertas existentes</h3>
-            <table class="tabla">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Título</th>
-                        <th>Empresa</th>
-                        <th>Nivel</th>
-                        <th>Área</th>
-                        <th>Límite</th>
-                        <th>Vacantes</th>
-                        <th>Destacada</th>
-                        <th>Estado</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody id="tbodyOfertasAdmin">
-                </tbody>
-            </table>
+        <div class="buscador-container" style="margin-bottom: 20px;">
+            <input type="text" id="buscadorOfertas" onkeyup="filtrarTabla()"
+                placeholder="Buscar por puesto o empresa..."
+                style="width: 100%; padding: 10px; border: 1px solid #D0D0D0; border-radius: 4px;">
         </div>
-    </div>
-
-    <script src="js/ofertas.js"></script>
+        <table class="tabla">
+    <thead>
+        <tr>
+            <th>Puesto</th>
+            <th>Empresa</th>
+            <th>Vacantes</th>
+            <th>Pendientes</th>
+            <th>Rechazadas</th>
+            <th>Aceptadas</th>
+            <th>Total</th>
+            <th>Acción</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Pasante Backend</td>
+            <td>Sabre</td>
+            <td><strong>3</strong></td>
+            <td><span class="badge pendiente">5</span></td>
+            <td><span class="badge rechazada">2</span></td>
+            <td><span class="badge aceptada">0</span></td>
+            <td><span class="badge total">7</span></td>
+            <td><button class="boton boton-pequeno">Ver Detalles</button></td>
+        </tr>
+    </tbody>
+</table>
+        <script src="js/ofertas.js"></script>
 </body>
+
 </html>
