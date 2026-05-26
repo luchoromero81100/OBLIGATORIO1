@@ -26,6 +26,12 @@
         <h1>Cazas Disponibles</h1>
         <p class="subtitulo">Ofertas especialmente pensadas para ti y tu perfil.</p>
 
+        <div class="buscador-container" style="margin-bottom: 20px;">
+            <input type="text" id="buscadorOfertas" onkeyup="filtrarTabla()" 
+                   placeholder="Buscar por puesto o empresa..." 
+                   style="width: 100%; padding: 10px; border: 1px solid #D0D0D0; border-radius: 4px;">
+        </div>
+
         <div class="card">
             <div id="contenedorOfertas">
                 <table class="tabla">
@@ -33,12 +39,66 @@
                         <tr>
                             <th>Título</th>
                             <th>Empresa</th>
-                            <th>Área</th>
-                            <th>Estado/Acción</th>
+                            <th>Vacantes</th>
+                            <th>Pendientes</th>
+                            <th>Rechazadas</th>
+                            <th>Aceptadas</th>
+                            <th>Total</th>
+                            <th>Acción</th>
                         </tr>
                     </thead>
                     <tbody id="tablaOfertas">
-                        </tbody>
+                        <tr>
+                            <td>Pasante Backend</td>
+                            <td>Sabre</td>
+                            <td><strong>3</strong></td>
+                            <td><span class="badge pendiente">5</span></td>
+                            <td><span class="badge rechazada">2</span></td>
+                            <td><span class="badge aceptada">0</span></td>
+                            <td><span class="badge total">7</span></td>
+                            <td><button class="boton boton-pequeno">Ver Detalles</button></td>
+                        </tr>
+                        <tr>
+                            <td>Frontend Senior</td>
+                            <td>Tech Solutions</td>
+                            <td><strong>1</strong></td>
+                            <td><span class="badge pendiente">12</span></td>
+                            <td><span class="badge rechazada">8</span></td>
+                            <td><span class="badge aceptada">1</span></td>
+                            <td><span class="badge total">21</span></td>
+                            <td><button class="boton boton-pequeno">Ver Detalles</button></td>
+                        </tr>
+                        <tr>
+                            <td>Analista de Datos</td>
+                            <td>DataCorp</td>
+                            <td><strong>2</strong></td>
+                            <td><span class="badge pendiente">8</span></td>
+                            <td><span class="badge rechazada">3</span></td>
+                            <td><span class="badge aceptada">2</span></td>
+                            <td><span class="badge total">13</span></td>
+                            <td><button class="boton boton-pequeno">Ver Detalles</button></td>
+                        </tr>
+                        <tr>
+                            <td>Diseñador UX/UI</td>
+                            <td>Creative Minds</td>
+                            <td><strong>2</strong></td>
+                            <td><span class="badge pendiente">4</span></td>
+                            <td><span class="badge rechazada">1</span></td>
+                            <td><span class="badge aceptada">0</span></td>
+                            <td><span class="badge total">5</span></td>
+                            <td><button class="boton boton-pequeno">Ver Detalles</button></td>
+                        </tr>
+                        <tr>
+                            <td>DevOps Engineer</td>
+                            <td>CloudNet</td>
+                            <td><strong>1</strong></td>
+                            <td><span class="badge pendiente">15</span></td>
+                            <td><span class="badge rechazada">10</span></td>
+                            <td><span class="badge aceptada">1</span></td>
+                            <td><span class="badge total">26</span></td>
+                            <td><button class="boton boton-pequeno">Ver Detalles</button></td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </div>
@@ -53,7 +113,23 @@
         </div>
     </div>
 
-    <script src="js/datos.js"></script>
-    <script src="js/ofertas.js"></script>
+    <script>
+        function filtrarTabla() {
+            let input = document.getElementById("buscadorOfertas");
+            let filtro = input.value.toUpperCase();
+            let tabla = document.querySelector(".tabla");
+            let filas = tabla.getElementsByTagName("tr");
+            for (let i = 1; i < filas.length; i++) {
+                let celdas = filas[i].getElementsByTagName("td");
+                let encontrado = false;
+                for (let j = 0; j < 2; j++) {
+                    if (celdas[j] && celdas[j].innerText.toUpperCase().indexOf(filtro) > -1) {
+                        encontrado = true;
+                    }
+                }
+                filas[i].style.display = encontrado ? "" : "none";
+            }
+        }
+    </script>
 </body>
 </html>
