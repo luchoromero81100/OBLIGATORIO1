@@ -35,7 +35,7 @@
             <h3>Postulaciones por oferta</h3>
 
             <div class="buscador-container" style="margin-bottom: 15px;">
-                <input type="text" id="buscadorEstadisticas" onkeyup="filtrarEstadisticas()"
+                <input type="text" id="buscadorEstadisticas"
                     placeholder="Buscar por título de oferta..."
                     style="width: 100%; padding: 10px; border: 1px solid #D0D0D0; border-radius: 4px;">
             </div>
@@ -113,27 +113,7 @@
         </div>
     </div>
 
-    <script>
-        // Buscador simple por titulo de oferta en la tabla de estadisticas
-        function filtrarEstadisticas() {
-            let input = document.getElementById("buscadorEstadisticas");
-            let filtro = input.value.toUpperCase();
-            let tabla = document.getElementById("tablaEstadisticas");
-            let filas = tabla.getElementsByTagName("tr");
-            for (let i = 1; i < filas.length; i++) {
-                let celdas = filas[i].getElementsByTagName("td");
-                let mostrar = false;
-                if (celdas[0] && celdas[0].innerText.toUpperCase().indexOf(filtro) > -1) {
-                    mostrar = true;
-                }
-                if (mostrar) {
-                    filas[i].style.display = "";
-                } else {
-                    filas[i].style.display = "none";
-                }
-            }
-        }
-    </script>
+    <script src="js/estadisticas.js"></script>
     <script src="js/nav.js"></script>
 </body>
 </html>

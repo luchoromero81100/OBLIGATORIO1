@@ -41,8 +41,8 @@
 
             <hr class="separador">
 
-            <button type="button" class="boton" onclick="aprobarPostulacion()">Aprobar postulación</button>
-            <button type="button" class="boton boton-secundario" onclick="rechazarPostulacion()">Rechazar postulación</button>
+            <button type="button" id="btnAprobarPostulacion" class="boton">Aprobar postulación</button>
+            <button type="button" id="btnRechazarPostulacion" class="boton boton-secundario">Rechazar postulación</button>
 
             <p id="pMensajeProcesar" class="mt-2"></p>
 
@@ -51,18 +51,7 @@
         </div>
     </div>
 
-    <script>
-        // Funciones placeholder para procesar postulaciones
-        function aprobarPostulacion() {
-            document.querySelector("#lblEstado").innerHTML = "Aceptada";
-            document.querySelector("#pMensajeProcesar").innerHTML = "La postulación fue aprobada (placeholder).";
-        }
-
-        function rechazarPostulacion() {
-            document.querySelector("#lblEstado").innerHTML = "Rechazada";
-            document.querySelector("#pMensajeProcesar").innerHTML = "La postulación fue rechazada (placeholder).";
-        }
-    </script>
+    <script src="js/procesar_postulacion.js"></script>
     <script src="js/nav.js"></script>
 </body>
 </html>

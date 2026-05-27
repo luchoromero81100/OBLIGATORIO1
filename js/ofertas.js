@@ -209,14 +209,25 @@ function mostrarOfertasEnTablaAdministrador() {
         textoTablaAdministrador = textoTablaAdministrador + "<td>";
         // boton editar: lleva a la pantalla de editar oferta
         textoTablaAdministrador = textoTablaAdministrador + "<a href='editar_oferta.html' class='boton boton-pequeno'>Editar</a> ";
-        // boton cerrar: le paso el indice de la oferta para saber cual cerrar
-        textoTablaAdministrador = textoTablaAdministrador + "<button type='button' class='boton boton-pequeno boton-secundario' onclick=\"cerrarOferta(" + i + ")\">Cerrar oferta</button>";
+        // boton cerrar: le guardo el indice en data-indice asi despues lo leo desde el listener
+        textoTablaAdministrador = textoTablaAdministrador + "<button type='button' class='boton boton-pequeno boton-secundario btn-cerrar-oferta' data-indice='" + i + "'>Cerrar oferta</button>";
         textoTablaAdministrador = textoTablaAdministrador + "</td>";
         textoTablaAdministrador = textoTablaAdministrador + "</tr>";
     }
 
     // tiro todo el string al tbody de una sola vez
     tablaAdmin.innerHTML = textoTablaAdministrador;
+
+    // ahora que las filas ya estan en el dom, engancho cada boton "Cerrar oferta"
+    // a la funcion cerrarOferta usando el indice que guarde en data-indice
+    let botonesCerrar = document.querySelectorAll(".btn-cerrar-oferta");
+    for (let k = 0; k < botonesCerrar.length; k++) {
+        botonesCerrar[k].addEventListener("click", function () {
+            // leo el indice del atributo data-indice y lo paso a numero
+            let indice = parseInt(this.getAttribute("data-indice"));
+            cerrarOferta(indice);
+        });
+    }
 }
 
 
@@ -318,3 +329,46 @@ if (document.querySelector("#btnCrearOferta") != null) {
 mostrarOfertasEnTablaAdministrador();
 mostrarOfertasEnTablaPostulante();
 mostrarOfertasDestacadas();
+
+
+// buscador de la tabla (lo usan ofertas.html y gestion_ofertas.html)
+// recorre las filas y oculta las que no coinciden con lo que escribe el usuario
+function filtrarTabla() {
+    let input = document.querySelector("#buscadorOfertas");
+    // si no estoy en una pagina con buscador, me voy
+    if (input == null) {
+        return;
+    }
+
+    // paso lo que escribio a mayuscula para comparar sin importar minuscula
+    let filtro = input.value.toUpperCase();
+    let filas = document.querySelector(".tabla").getElementsByTagName("tr");
+
+    // arranco en 1 para saltarme la fila del thead
+    for (let i = 1; i < filas.length; i++) {
+        let celdas = filas[i].getElementsByTagName("td");
+        let encontrado = false;
+
+        // me fijo en las primeras 3 celdas (asi en gestion_ofertas que tiene id+puesto+empresa
+        // tambien encuentra y en ofertas que tiene titulo+empresa funciona igual)
+        // y si alguna contiene el texto, marco encontrado en true
+        for (let j = 0; j < 3; j++) {
+            if (celdas[j] != null && celdas[j].innerText.toUpperCase().indexOf(filtro) > -1) {
+                encontrado = true;
+            }
+        }
+
+        // si no la encontre la oculto, sino la muestro
+        if (encontrado) {
+            filas[i].style.display = "";
+        } else {
+            filas[i].style.display = "none";
+        }
+    }
+}
+
+// engancho el buscador (existe en ofertas.html y gestion_ofertas.html)
+let buscador = document.querySelector("#buscadorOfertas");
+if (buscador != null) {
+    buscador.addEventListener("keyup", filtrarTabla);
+}

@@ -38,7 +38,7 @@
         </div>
 
         <div class="buscador-container" style="margin: 20px 0;">
-            <input type="text" id="buscadorOfertas" onkeyup="filtrarTabla()"
+            <input type="text" id="buscadorOfertas"
                 placeholder="Buscar por puesto o empresa..."
                 style="width: 100%; padding: 10px; border: 1px solid #D0D0D0; border-radius: 4px;">
         </div>
@@ -63,24 +63,6 @@
         </table>
     </div>
 
-    <script>
-        function filtrarTabla() {
-            let input = document.getElementById("buscadorOfertas");
-            let filtro = input.value.toUpperCase();
-            let filas = document.querySelector(".tabla").getElementsByTagName("tr");
-            for (let i = 1; i < filas.length; i++) {
-                let celdas = filas[i].getElementsByTagName("td");
-                let encontrado = false;
-                if (celdas[1] && celdas[1].innerText.toUpperCase().indexOf(filtro) > -1) {
-                    encontrado = true;
-                }
-                if (celdas[2] && celdas[2].innerText.toUpperCase().indexOf(filtro) > -1) {
-                    encontrado = true;
-                }
-                filas[i].style.display = encontrado ? "" : "none";
-            }
-        }
-    </script>
     <script src="js/ofertas.js"></script>
     <script src="js/nav.js"></script>
 </body>

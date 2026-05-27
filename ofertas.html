@@ -34,8 +34,8 @@
         <p class="subtitulo">Listado de ofertas activas a las que te podés postular.</p>
 
         <div class="buscador-container" style="margin-bottom: 20px;">
-            <input type="text" id="buscadorOfertas" onkeyup="filtrarTabla()" 
-                   placeholder="Buscar por puesto o empresa..." 
+            <input type="text" id="buscadorOfertas"
+                   placeholder="Buscar por puesto o empresa..."
                    style="width: 100%; padding: 10px; border: 1px solid #D0D0D0; border-radius: 4px;">
         </div>
 
@@ -59,24 +59,6 @@
         </div>
     </div>
 
-    <script>
-        function filtrarTabla() {
-            let input = document.getElementById("buscadorOfertas");
-            let filtro = input.value.toUpperCase();
-            let tabla = document.querySelector(".tabla");
-            let filas = tabla.getElementsByTagName("tr");
-            for (let i = 1; i < filas.length; i++) {
-                let celdas = filas[i].getElementsByTagName("td");
-                let encontrado = false;
-                for (let j = 0; j < 2; j++) {
-                    if (celdas[j] && celdas[j].innerText.toUpperCase().indexOf(filtro) > -1) {
-                        encontrado = true;
-                    }
-                }
-                filas[i].style.display = encontrado ? "" : "none";
-            }
-        }
-    </script>
     <script src="js/ofertas.js"></script>
     <script src="js/nav.js"></script>
 </body>
