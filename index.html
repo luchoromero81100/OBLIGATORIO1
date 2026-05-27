@@ -8,22 +8,29 @@
 </head>
 <body class="pagina-interna">
 
-    <header>
-        <nav class="navbar">
-            <div class="logo">
-                <a href="index.html">J<span class="mira-logo">⌖</span>bHunter</a>
-            </div>
-            
-            <ul class="nav-links">
-                <li><a href="login.html">Iniciar Sesión</a></li>
-                <li><a href="registro.html">Crear Cuenta</a></li>
-                <li><a href="ofertas.html">Caza de Trabajo</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">J<span class="mira-logo">⌖</span>bHunter</a>
+        </div>
+        
+        <ul class="nav-links">
+            <li id="liLogin"><a href="login.html">Iniciar Sesión</a></li>
+            <li id="liRegistro"><a href="registro.html">Crear Cuenta</a></li>
+            <li id="liOfertas"><a href="ofertas.html">Ofertas disponibles</a></li>
+            <li id="liDestacadas"><a href="ofertas_destacadas.html">Ofertas Destacadas</a></li>
+            <li id="liMisPostulaciones"><a href="mis_postulaciones.html">Mis Postulaciones</a></li>
+            <li id="liPendientes"><a href="postulaciones_pendientes.html">Postulaciones Pendientes</a></li>
+            <li id="liGestion"><a href="gestion_ofertas.html">Gestionar Ofertas</a></li>
+            <li id="liCrearOferta"><a href="crear_oferta.html">Crear Oferta</a></li>
+            <li id="liEstadisticas"><a href="estadisticas.html">Estadísticas</a></li>
+            <li id="liCerrarSesion"><a href="login.html" id="linkCerrarSesion">Cerrar Sesión</a></li>
+        </ul>
+    </nav>
+</header>
 
     <div class="contenedor">
-        
+
         <div class="hero card">
             <div class="hero-content">
                 <h1>Job Hunter</h1>
@@ -34,80 +41,24 @@
                 <img src="img/Imagen1.png" alt="Búsqueda de empleo" class="img-fluida">
             </div>
         </div>
-<div class="card">
-    <h2>Ofertas Destacadas</h2>
-    <p>Las oportunidades de mayor demanda seleccionadas para vos:</p>
-    
-    <table class="tabla">
-        <thead>
-            <tr>
-                <th>Puesto</th>
-                <th>Empresa</th>
-                <th>Ubicación</th>
-                <th>Acción</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Desarrollador Frontend Senior</td>
-                <td>Tech Solutions</td>
-                <td>Remoto</td>
-                <td><button class="boton boton-pequeno">Postularse</button></td>
-            </tr>
-            <tr>
-                <td>Analista de Datos</td>
-                <td>DataCorp</td>
-                <td>Montevideo</td>
-                <td><button class="boton boton-pequeno">Postularse</button></td>
-            </tr>
-            <tr>
-                <td>Diseñador UX/UI</td>
-                <td>Creative Minds</td>
-                <td>Híbrido</td>
-                <td><button class="boton boton-pequeno">Postularse</button></td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-        <div class="grid-secciones">
-            <div class="card">
-                <h2>Menu Principal</h2>
-                <p>Accede a todas las herramientas para encontrar tu próximo desafío:</p>
-                <ul class="lista-descrita">
-                    <li>
-                        <a href="registro.html"><strong>Registro</strong></a>
-                        <span>Crea tu perfil y define tus habilidades.</span>
-                    </li>
-                    <li>
-                        <a href="login.html"><strong>Iniciar Sesión</strong></a>
-                        <span>Accede a tu cuenta personal para postularte.</span>
-                    </li>
-                    <li>
-                        <a href="ofertas.html"><strong>Caza de Trabajo</strong></a>
-                        <span>Explora el listado general de vacantes activas.</span>
-                    </li>
-                    <li>
-                        <a href="ofertas_destacadas.html"><strong>Ofertas Destacadas</strong></a>
-                        <span>Los objetivos más urgentes y con mejores beneficios.</span>
-                    </li>
-                    <li>
-                        <a href="mis_postulaciones.html"><strong>Mis Cazas Activas</strong></a>
-                        <span>Revisa el historial y estado de tus postulaciones.</span>
-                    </li>
-                </ul>
-            </div>
 
-            <div class="card">
-                <h2>Panel de Control</h2>
-                <p>Herramientas exclusivas para la gestión del sistema:</p>
-                <ul class="lista-descrita">
-                    <li>
-                        <a href="admin.html"><strong>Dashboard Admin</strong></a>
-                        <span>Visualiza estadísticas y gestiona la plataforma.</span>
-                    </li>
-                </ul>
-                <div class="decoracion-admin">
-                    <img src="https://cdn-icons-png.flaticon.com/512/906/906343.png" alt="Admin Icon" style="width: 50px; opacity: 0.3;">
-                </div>
-            </div>
+        <div class="card">
+            <h2>Bienvenido</h2>
+            <p>Para comenzar, ingresá con tu cuenta o registrate como postulante.</p>
+            <ul class="lista-descrita">
+                <li>
+                    <a href="login.html"><strong>Iniciar Sesión</strong></a>
+                    <span>Accede a tu cuenta personal.</span>
+                </li>
+                <li>
+                    <a href="registro.html"><strong>Crear Cuenta</strong></a>
+                    <span>Registrate como postulante y empezá a postularte.</span>
+                </li>
+            </ul>
         </div>
+
+    </div>
+
+    <script src="js/nav.js"></script>
+</body>
+</html>

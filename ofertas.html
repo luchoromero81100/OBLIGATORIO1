@@ -15,16 +15,23 @@
         </div>
         
         <ul class="nav-links">
-            <li><a href="login.html">Iniciar Sesión</a></li>
-            <li><a href="registro.html">Crear Cuenta</a></li>
-            <li><a href="ofertas.html">Caza de Trabajo</a></li>
+            <li id="liLogin"><a href="login.html">Iniciar Sesión</a></li>
+            <li id="liRegistro"><a href="registro.html">Crear Cuenta</a></li>
+            <li id="liOfertas"><a href="ofertas.html">Ofertas disponibles</a></li>
+            <li id="liDestacadas"><a href="ofertas_destacadas.html">Ofertas Destacadas</a></li>
+            <li id="liMisPostulaciones"><a href="mis_postulaciones.html">Mis Postulaciones</a></li>
+            <li id="liPendientes"><a href="postulaciones_pendientes.html">Postulaciones Pendientes</a></li>
+            <li id="liGestion"><a href="gestion_ofertas.html">Gestionar Ofertas</a></li>
+            <li id="liCrearOferta"><a href="crear_oferta.html">Crear Oferta</a></li>
+            <li id="liEstadisticas"><a href="estadisticas.html">Estadísticas</a></li>
+            <li id="liCerrarSesion"><a href="login.html" id="linkCerrarSesion">Cerrar Sesión</a></li>
         </ul>
     </nav>
 </header>
 
     <div class="contenedor">
-        <h1>Cazas Disponibles</h1>
-        <p class="subtitulo">Ofertas especialmente pensadas para ti y tu perfil.</p>
+        <h1>Ofertas disponibles</h1>
+        <p class="subtitulo">Listado de ofertas activas a las que te podés postular.</p>
 
         <div class="buscador-container" style="margin-bottom: 20px;">
             <input type="text" id="buscadorOfertas" onkeyup="filtrarTabla()" 
@@ -39,77 +46,16 @@
                         <tr>
                             <th>Título</th>
                             <th>Empresa</th>
-                            <th>Vacantes</th>
-                            <th>Pendientes</th>
-                            <th>Rechazadas</th>
-                            <th>Aceptadas</th>
-                            <th>Total</th>
+                            <th>Descripción</th>
+                            <th>Nivel</th>
+                            <th>Área</th>
                             <th>Acción</th>
                         </tr>
                     </thead>
-                    <tbody id="tablaOfertas">
-                        <tr>
-                            <td>Pasante Backend</td>
-                            <td>Sabre</td>
-                            <td><strong>3</strong></td>
-                            <td><span class="badge pendiente">5</span></td>
-                            <td><span class="badge rechazada">2</span></td>
-                            <td><span class="badge aceptada">0</span></td>
-                            <td><span class="badge total">7</span></td>
-                            <td><button class="boton boton-pequeno">Ver Detalles</button></td>
-                        </tr>
-                        <tr>
-                            <td>Frontend Senior</td>
-                            <td>Tech Solutions</td>
-                            <td><strong>1</strong></td>
-                            <td><span class="badge pendiente">12</span></td>
-                            <td><span class="badge rechazada">8</span></td>
-                            <td><span class="badge aceptada">1</span></td>
-                            <td><span class="badge total">21</span></td>
-                            <td><button class="boton boton-pequeno">Ver Detalles</button></td>
-                        </tr>
-                        <tr>
-                            <td>Analista de Datos</td>
-                            <td>DataCorp</td>
-                            <td><strong>2</strong></td>
-                            <td><span class="badge pendiente">8</span></td>
-                            <td><span class="badge rechazada">3</span></td>
-                            <td><span class="badge aceptada">2</span></td>
-                            <td><span class="badge total">13</span></td>
-                            <td><button class="boton boton-pequeno">Ver Detalles</button></td>
-                        </tr>
-                        <tr>
-                            <td>Diseñador UX/UI</td>
-                            <td>Creative Minds</td>
-                            <td><strong>2</strong></td>
-                            <td><span class="badge pendiente">4</span></td>
-                            <td><span class="badge rechazada">1</span></td>
-                            <td><span class="badge aceptada">0</span></td>
-                            <td><span class="badge total">5</span></td>
-                            <td><button class="boton boton-pequeno">Ver Detalles</button></td>
-                        </tr>
-                        <tr>
-                            <td>DevOps Engineer</td>
-                            <td>CloudNet</td>
-                            <td><strong>1</strong></td>
-                            <td><span class="badge pendiente">15</span></td>
-                            <td><span class="badge rechazada">10</span></td>
-                            <td><span class="badge aceptada">1</span></td>
-                            <td><span class="badge total">26</span></td>
-                            <td><button class="boton boton-pequeno">Ver Detalles</button></td>
-                        </tr>
+                    <tbody id="tbodyOfertasPostulante">
                     </tbody>
                 </table>
             </div>
-        </div>
-
-        <div class="card mt-3">
-            <h3>Navegación Rápida</h3>
-            <nav class="nav-secundario">
-                <a href="ofertas_destacadas.html">Ver Ofertas Destacadas</a> | 
-                <a href="mis_postulaciones.html">Ver Mis Postulaciones</a> |   
-                <a href="login.html" class="link-alerta">Cerrar Sesión</a>
-            </nav>
         </div>
     </div>
 
@@ -131,5 +77,7 @@
             }
         }
     </script>
+    <script src="js/ofertas.js"></script>
+    <script src="js/nav.js"></script>
 </body>
 </html>

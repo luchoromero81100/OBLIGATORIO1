@@ -15,9 +15,16 @@
         </div>
         
         <ul class="nav-links">
-            <li><a href="login.html">Iniciar Sesión</a></li>
-            <li><a href="registro.html">Crear Cuenta</a></li>
-            <li><a href="ofertas.html">Caza de Trabajo</a></li>
+            <li id="liLogin"><a href="login.html">Iniciar Sesión</a></li>
+            <li id="liRegistro"><a href="registro.html">Crear Cuenta</a></li>
+            <li id="liOfertas"><a href="ofertas.html">Ofertas disponibles</a></li>
+            <li id="liDestacadas"><a href="ofertas_destacadas.html">Ofertas Destacadas</a></li>
+            <li id="liMisPostulaciones"><a href="mis_postulaciones.html">Mis Postulaciones</a></li>
+            <li id="liPendientes"><a href="postulaciones_pendientes.html">Postulaciones Pendientes</a></li>
+            <li id="liGestion"><a href="gestion_ofertas.html">Gestionar Ofertas</a></li>
+            <li id="liCrearOferta"><a href="crear_oferta.html">Crear Oferta</a></li>
+            <li id="liEstadisticas"><a href="estadisticas.html">Estadísticas</a></li>
+            <li id="liCerrarSesion"><a href="login.html" id="linkCerrarSesion">Cerrar Sesión</a></li>
         </ul>
     </nav>
 </header>
@@ -26,15 +33,25 @@
         <h1>⭐ Objetivos con alta demanda y urgencia ⭐</h1>
         <p class="subtitulo">Estas ofertas requieren atención inmediata y ofrecen mejores recompensas.</p>
 
-        <div id="listaDestacadas" class="grid-destacados">
-            </div>
-
-        <div class="mt-3">
-            <a href="ofertas.html" class="btn-secundario">← Volver al listado general</a>
+        <div class="card">
+            <table class="tabla">
+                <thead>
+                    <tr>
+                        <th>Título</th>
+                        <th>Empresa</th>
+                        <th>Descripción</th>
+                        <th>Nivel</th>
+                        <th>Área</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody id="tbodyOfertasDestacadas">
+                </tbody>
+            </table>
         </div>
     </div>
 
-    <script src="js/datos.js"></script>
-    <script src="js/ofertas_destacadas.js"></script>
+    <script src="js/ofertas.js"></script>
+    <script src="js/nav.js"></script>
 </body>
 </html>

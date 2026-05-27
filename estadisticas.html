@@ -6,27 +6,95 @@
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body class="pagina-interna">
-    <nav>
-        <a href="gestion_ofertas.html">Volver a Gestión de Ofertas</a>
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">J<span class="mira-logo">⌖</span>bHunter</a>
+        </div>
+        
+        <ul class="nav-links">
+            <li id="liLogin"><a href="login.html">Iniciar Sesión</a></li>
+            <li id="liRegistro"><a href="registro.html">Crear Cuenta</a></li>
+            <li id="liOfertas"><a href="ofertas.html">Ofertas disponibles</a></li>
+            <li id="liDestacadas"><a href="ofertas_destacadas.html">Ofertas Destacadas</a></li>
+            <li id="liMisPostulaciones"><a href="mis_postulaciones.html">Mis Postulaciones</a></li>
+            <li id="liPendientes"><a href="postulaciones_pendientes.html">Postulaciones Pendientes</a></li>
+            <li id="liGestion"><a href="gestion_ofertas.html">Gestionar Ofertas</a></li>
+            <li id="liCrearOferta"><a href="crear_oferta.html">Crear Oferta</a></li>
+            <li id="liEstadisticas"><a href="estadisticas.html">Estadísticas</a></li>
+            <li id="liCerrarSesion"><a href="login.html" id="linkCerrarSesion">Cerrar Sesión</a></li>
+        </ul>
     </nav>
+</header>
     
     <div class="contenedor">
         <h1>Estadísticas</h1>
-        
+        <p class="subtitulo">Datos generales del sistema. Estas estadísticas son solo de lectura.</p>
+
         <div class="card">
             <h3>Postulaciones por oferta</h3>
-            <table class="tabla">
+
+            <div class="buscador-container" style="margin-bottom: 15px;">
+                <input type="text" id="buscadorEstadisticas" onkeyup="filtrarEstadisticas()"
+                    placeholder="Buscar por título de oferta..."
+                    style="width: 100%; padding: 10px; border: 1px solid #D0D0D0; border-radius: 4px;">
+            </div>
+
+            <table class="tabla" id="tablaEstadisticas">
                 <tr>
                     <th>Oferta</th>
+                    <th>Empresa</th>
                     <th>Cantidad de Postulaciones</th>
                 </tr>
                 <tr>
-                    <td>Desarrollador Web</td>
-                    <td>5</td>
+                    <td>Pasante Backend</td>
+                    <td>Sabre</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>Desarrollador Full Stack</td>
+                    <td>Globant</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>Analista de Datos</td>
+                    <td>Mercado Libre</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Ingeniero DevOps</td>
+                    <td>dLocal</td>
+                    <td>0</td>
                 </tr>
                 <tr>
                     <td>Diseñador UX/UI</td>
-                    <td>2</td>
+                    <td>PedidosYa</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Especialista en Marketing Digital</td>
+                    <td>Despegar</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Consultor SAP Junior</td>
+                    <td>Accenture</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Desarrollador Java</td>
+                    <td>TCS</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Analista de Recursos Humanos</td>
+                    <td>Santander</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Desarrollador GeneXus</td>
+                    <td>GeneXus</td>
+                    <td>0</td>
                 </tr>
             </table>
         </div>
@@ -35,14 +103,37 @@
             <h3>Resumen de Ofertas</h3>
             <p><strong>Total Activas:</strong> 10</p>
             <p><strong>Total Inactivas:</strong> 2</p>
-            <p><strong>Total Cerradas:</strong> 5</p>
+            <p><strong>Total Cerradas:</strong> 3</p>
         </div>
 
         <div class="card mt-3">
             <h3>Otros datos</h3>
-            <p><strong>Porcentaje de vacantes cubiertas:</strong> 45%</p>
+            <p><strong>Porcentaje de vacantes cubiertas:</strong> 48%</p>
             <p><strong>Postulante con más postulaciones activas:</strong> usuario1</p>
         </div>
     </div>
+
+    <script>
+        // Buscador simple por titulo de oferta en la tabla de estadisticas
+        function filtrarEstadisticas() {
+            let input = document.getElementById("buscadorEstadisticas");
+            let filtro = input.value.toUpperCase();
+            let tabla = document.getElementById("tablaEstadisticas");
+            let filas = tabla.getElementsByTagName("tr");
+            for (let i = 1; i < filas.length; i++) {
+                let celdas = filas[i].getElementsByTagName("td");
+                let mostrar = false;
+                if (celdas[0] && celdas[0].innerText.toUpperCase().indexOf(filtro) > -1) {
+                    mostrar = true;
+                }
+                if (mostrar) {
+                    filas[i].style.display = "";
+                } else {
+                    filas[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+    <script src="js/nav.js"></script>
 </body>
 </html>

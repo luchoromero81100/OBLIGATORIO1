@@ -1,3 +1,6 @@
+// aca tengo todos los usuarios precargados de la app
+// los admins ya vienen creados (no se pueden registrar segun la letra)
+// los postulantes los puse de prueba para poder loguearse y mostrar las pantallas
 const usuarios = [
   {
     usuario: "Luciano",

@@ -1,50 +1,143 @@
-// Array global con ofertas precargadas para mostrar en las pantallas
+// aca esta todo lo de las ofertas laborales: el array, crearlas, mostrarlas en cada pantalla y cerrarlas
+
+// array de ofertas precargadas (es lo que se ve en pantalla cuando abrimos la app)
+// cada oferta es un objeto con todos los datos que pide la letra
+// el id arranca con JOB_OFFER_ y un numero (formato que pide la consigna)
 let ofertasLaborales = [
     {
-        id: "#1",
-        titulo: "Desarrollador de Integraciones Junior",
-        empresa: "Descartes",
-        descripcion: "Participar en el desarrollo de sitios web y mantenimiento de aplicaciones.",
+        id: "JOB_OFFER_1",
+        titulo: "Pasante Backend",
+        empresa: "Sabre",
+        descripcion: "Apoyar al equipo de desarrollo en la implementación de servicios backend para soluciones de la industria del turismo.",
         nivel: "Junior",
         area: "Tecnología",
+        limitePostulaciones: "20",
+        vacantes: "2",
+        destacada: "Sí",
+        estado: "Activa"
+    },
+    {
+        id: "JOB_OFFER_2",
+        titulo: "Desarrollador Full Stack",
+        empresa: "Globant",
+        descripcion: "Diseñar, desarrollar y mantener aplicaciones web utilizando React y Node.js para clientes internacionales.",
+        nivel: "Semi-Senior",
+        area: "Tecnología",
+        limitePostulaciones: "15",
+        vacantes: "3",
+        destacada: "Sí",
+        estado: "Activa"
+    },
+    {
+        id: "JOB_OFFER_3",
+        titulo: "Analista de Datos",
+        empresa: "Mercado Libre",
+        descripcion: "Analizar grandes volúmenes de datos para generar insights de negocio y dar soporte a la toma de decisiones.",
+        nivel: "Semi-Senior",
+        area: "Tecnología",
+        limitePostulaciones: "12",
+        vacantes: "2",
+        destacada: "Sí",
+        estado: "Activa"
+    },
+    {
+        id: "JOB_OFFER_4",
+        titulo: "Ingeniero DevOps",
+        empresa: "dLocal",
+        descripcion: "Automatizar pipelines de CI/CD y administrar infraestructura cloud sobre AWS para procesamiento de pagos.",
+        nivel: "Senior",
+        area: "Tecnología",
+        limitePostulaciones: "10",
+        vacantes: "1",
+        destacada: "No",
+        estado: "Activa"
+    },
+    {
+        id: "JOB_OFFER_5",
+        titulo: "Diseñador UX/UI",
+        empresa: "PedidosYa",
+        descripcion: "Diseñar interfaces y flujos de usuario para la app de delivery, trabajando junto al equipo de producto.",
+        nivel: "Semi-Senior",
+        area: "Diseño",
         limitePostulaciones: "10",
         vacantes: "2",
         destacada: "Sí",
         estado: "Activa"
     },
     {
-        id: "#2",
-        titulo: "Analista de Marketing",
-        empresa: "WASABI",
-        descripcion: "Analizar campañas de marketing digital y proponer mejoras estratégicas.",
+        // esta la puse inactiva a proposito para que se vea distinta en gestionar ofertas
+        id: "JOB_OFFER_6",
+        titulo: "Especialista en Marketing Digital",
+        empresa: "Despegar",
+        descripcion: "Planificar y ejecutar campañas de performance marketing y SEO para mercados de Latinoamérica.",
         nivel: "Senior",
         area: "Marketing",
         limitePostulaciones: "8",
-        vacantes: "3",
-        destacada: "Sí",
+        vacantes: "1",
+        destacada: "No",
+        estado: "Inactiva"
+    },
+    {
+        id: "JOB_OFFER_7",
+        titulo: "Consultor SAP Junior",
+        empresa: "Accenture",
+        descripcion: "Participar en proyectos de implementación SAP, brindando soporte funcional a clientes corporativos.",
+        nivel: "Junior",
+        area: "Tecnología",
+        limitePostulaciones: "15",
+        vacantes: "4",
+        destacada: "No",
         estado: "Activa"
     },
     {
-        id: "#3",
-        titulo: "Analista de Marketing",
-        empresa: "NOA",
-        descripcion: "Analizar campañas de marketing digital y proponer mejoras estratégicas.",
-        nivel: "Senior",
-        area: "Marketing",
-        limitePostulaciones: "8",
+        // esta la puse cerrada para que se vea como queda despues de cerrar una oferta
+        id: "JOB_OFFER_8",
+        titulo: "Desarrollador Java",
+        empresa: "TCS",
+        descripcion: "Desarrollar y mantener aplicaciones empresariales con Java, Spring Boot y bases de datos relacionales.",
+        nivel: "Semi-Senior",
+        area: "Tecnología",
+        limitePostulaciones: "12",
         vacantes: "3",
+        destacada: "No",
+        estado: "Cerrada"
+    },
+    {
+        id: "JOB_OFFER_9",
+        titulo: "Analista de Recursos Humanos",
+        empresa: "Santander",
+        descripcion: "Gestionar procesos de selección, onboarding y desarrollo del talento interno del banco.",
+        nivel: "Junior",
+        area: "Administración",
+        limitePostulaciones: "10",
+        vacantes: "1",
+        destacada: "No",
+        estado: "Activa"
+    },
+    {
+        id: "JOB_OFFER_10",
+        titulo: "Desarrollador GeneXus",
+        empresa: "GeneXus",
+        descripcion: "Desarrollar aplicaciones empresariales utilizando la plataforma GeneXus y dar soporte a clientes globales.",
+        nivel: "Semi-Senior",
+        area: "Tecnología",
+        limitePostulaciones: "10",
+        vacantes: "2",
         destacada: "Sí",
         estado: "Activa"
     }
 ];
 
-// Contador para el próximo ID de oferta
-let proximoNumeroOferta = 4;
+// contador para el id de la proxima oferta nueva
+// como ya tengo 10 cargadas, arranco en 11
+let proximoNumeroOferta = 11;
 
 
-// Creacion de ofertas
-
+// crear oferta nueva (lo dispara el boton de la pantalla crear_oferta.html)
+// agarra todos los inputs del form, arma un objeto con el id autoincremental
+// y lo agrega al array. despues limpia el form y refresca las tablas
 function crearOfertaLaboral() {
+    // me traigo todos los valores del formulario
     let tituloOferta = document.querySelector("#txtTituloOferta").value;
     let empresaOferta = document.querySelector("#txtEmpresaOferta").value;
     let descripcionOferta = document.querySelector("#txtDescripcionOferta").value;
@@ -54,14 +147,15 @@ function crearOfertaLaboral() {
     let cantidadVacantesOferta = document.querySelector("#txtCantidadVacantes").value;
     let esDestacada = document.querySelector("#chkOfertaDestacada").checked;
 
+    // el checkbox devuelve true o false, pero yo guardo la palabra "Sí" o "No" como string para que se vea lindo en la tabla
     let valorDestacada = "No";
     if (esDestacada) {
         valorDestacada = "Sí";
     }
 
-    // Acá creo un objeto para el array de ofertas con todas las caracteristicas de arriba
+    // armo el objeto nuevo con el id autoincremental que pide la letra
     let ofertaNueva = {
-        id: "#" + proximoNumeroOferta,
+        id: "JOB_OFFER_" + proximoNumeroOferta,
         titulo: tituloOferta,
         empresa: empresaOferta,
         descripcion: descripcionOferta,
@@ -70,30 +164,35 @@ function crearOfertaLaboral() {
         limitePostulaciones: limitePostulacionesOferta,
         vacantes: cantidadVacantesOferta,
         destacada: valorDestacada,
-        estado: "Activa"
+        estado: "Activa" // toda oferta nueva arranca como activa
     };
-    
-    // Acá lo pusheo en el array
+
+    // la pusheo al array y le sumo 1 al contador para la proxima
     ofertasLaborales.push(ofertaNueva);
     proximoNumeroOferta++;
 
+    // mensajito de exito
     document.querySelector("#pMensajeOferta").innerHTML = "Oferta creada correctamente.";
 
+    // limpio el form y refresco las tablas para que aparezca la oferta nueva al toque
     limpiarFormularioOfertaLaboral();
     mostrarOfertasEnTablaAdministrador();
     mostrarOfertasEnTablaPostulante();
 }
 
 
-// Mostrar ofertas en tabla Admin
-
+// tabla del admin (gestion_ofertas.html)
+// muestra todas las ofertas (activas, inactivas y cerradas) con sus botones de editar y cerrar
 function mostrarOfertasEnTablaAdministrador() {
     let tablaAdmin = document.querySelector("#tbodyOfertasAdmin");
 
-    if (tablaAdmin === null) {
+    // si no estoy en la pagina del admin, no hago nada y me voy
+    // (esto se llama en todas las paginas asi que tengo que chequear)
+    if (tablaAdmin == null) {
         return;
     }
 
+    // voy armando todo el html de las filas en un string
     let textoTablaAdministrador = "";
 
     for (let i = 0; i < ofertasLaborales.length; i++) {
@@ -108,46 +207,92 @@ function mostrarOfertasEnTablaAdministrador() {
         textoTablaAdministrador = textoTablaAdministrador + "<td>" + ofertasLaborales[i].destacada + "</td>";
         textoTablaAdministrador = textoTablaAdministrador + "<td>" + ofertasLaborales[i].estado + "</td>";
         textoTablaAdministrador = textoTablaAdministrador + "<td>";
-        textoTablaAdministrador = textoTablaAdministrador + "<button type='button' class='boton boton-pequeno'>Editar</button> ";
-        textoTablaAdministrador = textoTablaAdministrador + "<button type='button' class='boton boton-pequeno boton-secundario'>Cerrar oferta</button>";
+        // boton editar: lleva a la pantalla de editar oferta
+        textoTablaAdministrador = textoTablaAdministrador + "<a href='editar_oferta.html' class='boton boton-pequeno'>Editar</a> ";
+        // boton cerrar: le paso el indice de la oferta para saber cual cerrar
+        textoTablaAdministrador = textoTablaAdministrador + "<button type='button' class='boton boton-pequeno boton-secundario' onclick=\"cerrarOferta(" + i + ")\">Cerrar oferta</button>";
         textoTablaAdministrador = textoTablaAdministrador + "</td>";
         textoTablaAdministrador = textoTablaAdministrador + "</tr>";
     }
 
+    // tiro todo el string al tbody de una sola vez
     tablaAdmin.innerHTML = textoTablaAdministrador;
 }
 
 
-// Mostrar ofertas en tabla de usuarios
+// cerrar oferta (borrado logico)
+// no la borro del array, solo le cambio el estado a "Cerrada" y refresco la tabla
+function cerrarOferta(indice) {
+    ofertasLaborales[indice].estado = "Cerrada";
+    mostrarOfertasEnTablaAdministrador();
+}
 
+
+// tabla del postulante (ofertas.html)
+// solo muestro ofertas activas (las cerradas o inactivas no le interesan al postulante)
 function mostrarOfertasEnTablaPostulante() {
     let tablaPostulante = document.querySelector("#tbodyOfertasPostulante");
 
-    if (tablaPostulante === null) {
+    // si no estoy en la pagina del postulante, me voy
+    if (tablaPostulante == null) {
         return;
     }
 
     let textoTablaPostulante = "";
 
     for (let i = 0; i < ofertasLaborales.length; i++) {
-        textoTablaPostulante = textoTablaPostulante + "<tr>";
-        textoTablaPostulante = textoTablaPostulante + "<td>" + ofertasLaborales[i].titulo + "</td>";
-        textoTablaPostulante = textoTablaPostulante + "<td>" + ofertasLaborales[i].empresa + "</td>";
-        textoTablaPostulante = textoTablaPostulante + "<td>" + ofertasLaborales[i].descripcion + "</td>";
-        textoTablaPostulante = textoTablaPostulante + "<td>" + ofertasLaborales[i].nivel + "</td>";
-        textoTablaPostulante = textoTablaPostulante + "<td>" + ofertasLaborales[i].area + "</td>";
-        textoTablaPostulante = textoTablaPostulante + "<td>";
-        textoTablaPostulante = textoTablaPostulante + "<button type='button' class='boton boton-pequeno'>Postularme</button>";
-        textoTablaPostulante = textoTablaPostulante + "</td>";
-        textoTablaPostulante = textoTablaPostulante + "</tr>";
+        // filtro: solo las activas
+        if (ofertasLaborales[i].estado == "Activa") {
+            textoTablaPostulante = textoTablaPostulante + "<tr>";
+            textoTablaPostulante = textoTablaPostulante + "<td>" + ofertasLaborales[i].titulo + "</td>";
+            textoTablaPostulante = textoTablaPostulante + "<td>" + ofertasLaborales[i].empresa + "</td>";
+            textoTablaPostulante = textoTablaPostulante + "<td>" + ofertasLaborales[i].descripcion + "</td>";
+            textoTablaPostulante = textoTablaPostulante + "<td>" + ofertasLaborales[i].nivel + "</td>";
+            textoTablaPostulante = textoTablaPostulante + "<td>" + ofertasLaborales[i].area + "</td>";
+            textoTablaPostulante = textoTablaPostulante + "<td>";
+            textoTablaPostulante = textoTablaPostulante + "<button type='button' class='boton boton-pequeno'>Postularme</button>";
+            textoTablaPostulante = textoTablaPostulante + "</td>";
+            textoTablaPostulante = textoTablaPostulante + "</tr>";
+        }
     }
 
     tablaPostulante.innerHTML = textoTablaPostulante;
 }
 
 
-// Limpiar inputs al crear oferta
+// tabla de destacadas (ofertas_destacadas.html)
+// muestro solo las que estan marcadas como destacadas y que ademas siguen activas
+// (no quiero mostrar destacadas que esten cerradas)
+function mostrarOfertasDestacadas() {
+    let tablaDestacadas = document.querySelector("#tbodyOfertasDestacadas");
 
+    if (tablaDestacadas == null) {
+        return;
+    }
+
+    let textoTablaDestacadas = "";
+
+    for (let i = 0; i < ofertasLaborales.length; i++) {
+        if (ofertasLaborales[i].destacada == "Sí" && ofertasLaborales[i].estado == "Activa") {
+            textoTablaDestacadas = textoTablaDestacadas + "<tr>";
+            textoTablaDestacadas = textoTablaDestacadas + "<td>" + ofertasLaborales[i].titulo + "</td>";
+            textoTablaDestacadas = textoTablaDestacadas + "<td>" + ofertasLaborales[i].empresa + "</td>";
+            textoTablaDestacadas = textoTablaDestacadas + "<td>" + ofertasLaborales[i].descripcion + "</td>";
+            textoTablaDestacadas = textoTablaDestacadas + "<td>" + ofertasLaborales[i].nivel + "</td>";
+            textoTablaDestacadas = textoTablaDestacadas + "<td>" + ofertasLaborales[i].area + "</td>";
+            textoTablaDestacadas = textoTablaDestacadas + "<td>";
+            textoTablaDestacadas = textoTablaDestacadas + "<button type='button' class='boton boton-pequeno'>Postularme</button>";
+            textoTablaDestacadas = textoTablaDestacadas + "</td>";
+            textoTablaDestacadas = textoTablaDestacadas + "</tr>";
+        }
+    }
+
+    tablaDestacadas.innerHTML = textoTablaDestacadas;
+}
+
+
+// limpia los inputs del form despues de crear una oferta
+// asi cuando creo otra el form arranca vacio
 function limpiarFormularioOfertaLaboral() {
     document.querySelector("#txtTituloOferta").value = "";
     document.querySelector("#txtEmpresaOferta").value = "";
@@ -160,13 +305,16 @@ function limpiarFormularioOfertaLaboral() {
 }
 
 
-// En la carga inciar, hago esto para eviat un erro en la consola al llamar al btnCrearOferta en casos donde no existe 
+// enganches y carga inicial
 
-// Evento del botón crear oferta (solo existe en gestion_ofertas.html)
-if (document.querySelector("#btnCrearOferta") !== null) {
+// el boton de crear oferta solo existe en crear_oferta.html, asi que primero chequeo
+// (sino tira error en consola en las otras paginas)
+if (document.querySelector("#btnCrearOferta") != null) {
     document.querySelector("#btnCrearOferta").addEventListener("click", crearOfertaLaboral);
 }
 
-// Mostrar ofertas en las tablas al cargar la página
+// llamo a las 3 funciones de mostrar al cargar
+// cada una se fija si esta en la pagina correcta antes de hacer algo, asi no rompe
 mostrarOfertasEnTablaAdministrador();
 mostrarOfertasEnTablaPostulante();
+mostrarOfertasDestacadas();

@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Mis Postulaciones - Cartelera Laboral</title>
+    <title>Postulaciones pendientes - Administrador</title>
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body class="pagina-interna">
@@ -27,53 +27,30 @@
         </ul>
     </nav>
 </header>
-    
+
     <div class="contenedor">
-        <h1>Mis Postulaciones</h1>
-        
-        <table class="tabla">
-            <tr>
-                <th>Oferta</th>
-                <th>Empresa</th>
-                <th>Estado</th>
-            </tr>
-            <tr>
-                <td>Pasante Backend</td>
-                <td>Sabre</td>
-                <td>Pendiente</td>
-            </tr>
-            <tr>
-                <td>Desarrollador Full Stack</td>
-                <td>Globant</td>
-                <td>Pendiente</td>
-            </tr>
-            <tr>
-                <td>Analista de Datos</td>
-                <td>Mercado Libre</td>
-                <td>Pendiente</td>
-            </tr>
-            <tr>
-                <td>Diseñador UX/UI</td>
-                <td>PedidosYa</td>
-                <td>Aceptada</td>
-            </tr>
-            <tr>
-                <td>Desarrollador Web</td>
-                <td>Tech Corp</td>
-                <td>Rechazada</td>
-            </tr>
-            <tr>
-                <td>Community Manager</td>
-                <td>Data INC</td>
-                <td>Rechazada</td>
-            </tr>
-            <tr>
-                <td>QA Tester</td>
-                <td>Globant</td>
-                <td>Aceptada</td>
-            </tr>
-        </table>
+        <h1>Postulaciones pendientes</h1>
+        <p class="subtitulo">Listado de postulaciones que aún tenés que procesar.</p>
+
+        <div class="card">
+            <table class="tabla">
+                <thead>
+                    <tr>
+                        <th>ID Postulación</th>
+                        <th>Postulante</th>
+                        <th>Oferta</th>
+                        <th>Empresa</th>
+                        <th>Estado</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody id="tbodyPostulacionesPendientes">
+                </tbody>
+            </table>
+        </div>
     </div>
+
+    <script src="js/postulaciones.js"></script>
     <script src="js/nav.js"></script>
 </body>
 </html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar oferta - Administrador</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body class="pagina-interna">
+
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">J<span class="mira-logo">⌖</span>bHunter</a>
+        </div>
+        
+        <ul class="nav-links">
+            <li id="liLogin"><a href="login.html">Iniciar Sesión</a></li>
+            <li id="liRegistro"><a href="registro.html">Crear Cuenta</a></li>
+            <li id="liOfertas"><a href="ofertas.html">Ofertas disponibles</a></li>
+            <li id="liDestacadas"><a href="ofertas_destacadas.html">Ofertas Destacadas</a></li>
+            <li id="liMisPostulaciones"><a href="mis_postulaciones.html">Mis Postulaciones</a></li>
+            <li id="liPendientes"><a href="postulaciones_pendientes.html">Postulaciones Pendientes</a></li>
+            <li id="liGestion"><a href="gestion_ofertas.html">Gestionar Ofertas</a></li>
+            <li id="liCrearOferta"><a href="crear_oferta.html">Crear Oferta</a></li>
+            <li id="liEstadisticas"><a href="estadisticas.html">Estadísticas</a></li>
+            <li id="liCerrarSesion"><a href="login.html" id="linkCerrarSesion">Cerrar Sesión</a></li>
+        </ul>
+    </nav>
+</header>
+
+    <div class="contenedor">
+        <h1>Editar oferta laboral</h1>
+        <p class="subtitulo">Modifica los datos de la oferta seleccionada. El ID no es editable.</p>
+
+        <div class="card">
+            <div class="form-grupo">
+                <label>ID de la oferta:</label>
+                <input type="text" id="txtIdOfertaEditar" value="JOB_OFFER_1" readonly>
+            </div>
+
+            <div class="form-grupo">
+                <label>Título de la oferta:</label>
+                <input type="text" id="txtTituloOfertaEditar" value="Pasante Backend">
+            </div>
+
+            <div class="form-grupo">
+                <label>Nombre de la empresa:</label>
+                <input type="text" id="txtEmpresaOfertaEditar" value="Sabre">
+            </div>
+
+            <div class="form-grupo">
+                <label>Descripción de la oferta:</label>
+                <textarea id="txtDescripcionOfertaEditar">Apoyar al equipo de desarrollo en la implementación de servicios backend para soluciones de la industria del turismo.</textarea>
+            </div>
+
+            <div class="form-grupo">
+                <label>Nivel requerido:</label>
+                <select id="slcNivelOfertaEditar">
+                    <option>Junior</option>
+                    <option>Semi-Senior</option>
+                    <option>Senior</option>
+                </select>
+            </div>
+
+            <div class="form-grupo">
+                <label>Área:</label>
+                <select id="slcAreaOfertaEditar">
+                    <option>Tecnología</option>
+                    <option>Diseño</option>
+                    <option>Marketing</option>
+                    <option>Administración</option>
+                    <option>Otros</option>
+                </select>
+            </div>
+
+            <div class="form-grupo">
+                <label>Límite de postulaciones:</label>
+                <input type="number" id="txtLimitePostulacionesEditar" value="20">
+            </div>
+
+            <div class="form-grupo">
+                <label>Cantidad de vacantes:</label>
+                <input type="number" id="txtCantidadVacantesEditar" value="2">
+            </div>
+
+            <div class="form-grupo">
+                <label>
+                    <input type="checkbox" id="chkOfertaDestacadaEditar" checked> Oferta destacada
+                </label>
+            </div>
+
+            <button type="button" id="btnGuardarOferta" class="boton" onclick="guardarEdicionOferta()">Guardar cambios</button>
+            <a href="gestion_ofertas.html" class="btn-secundario">Cancelar</a>
+
+            <p id="pMensajeEdicion" class="mt-2"></p>
+        </div>
+    </div>
+
+    <script>
+        // Funcion placeholder: en una version real guardaria los cambios en el array
+        function guardarEdicionOferta() {
+            document.querySelector("#pMensajeEdicion").innerHTML = "Cambios guardados (placeholder).";
+        }
+    </script>
+    <script src="js/nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear oferta - Administrador</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body class="pagina-interna">
+
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">J<span class="mira-logo">⌖</span>bHunter</a>
+        </div>
+        
+        <ul class="nav-links">
+            <li id="liLogin"><a href="login.html">Iniciar Sesión</a></li>
+            <li id="liRegistro"><a href="registro.html">Crear Cuenta</a></li>
+            <li id="liOfertas"><a href="ofertas.html">Ofertas disponibles</a></li>
+            <li id="liDestacadas"><a href="ofertas_destacadas.html">Ofertas Destacadas</a></li>
+            <li id="liMisPostulaciones"><a href="mis_postulaciones.html">Mis Postulaciones</a></li>
+            <li id="liPendientes"><a href="postulaciones_pendientes.html">Postulaciones Pendientes</a></li>
+            <li id="liGestion"><a href="gestion_ofertas.html">Gestionar Ofertas</a></li>
+            <li id="liCrearOferta"><a href="crear_oferta.html">Crear Oferta</a></li>
+            <li id="liEstadisticas"><a href="estadisticas.html">Estadísticas</a></li>
+            <li id="liCerrarSesion"><a href="login.html" id="linkCerrarSesion">Cerrar Sesión</a></li>
+        </ul>
+    </nav>
+</header>
+
+    <div class="contenedor">
+        <h1>Crear oferta laboral</h1>
+        <p class="subtitulo">Completa el formulario para publicar una nueva oferta. El ID se genera con el formato <strong>JOB_OFFER_nroAutoincremental</strong>.</p>
+
+        <div class="card">
+            <div class="form-grupo">
+                <label>Título de la oferta:</label>
+                <input type="text" id="txtTituloOferta">
+            </div>
+
+            <div class="form-grupo">
+                <label>Nombre de la empresa:</label>
+                <input type="text" id="txtEmpresaOferta">
+            </div>
+
+            <div class="form-grupo">
+                <label>Descripción de la oferta:</label>
+                <textarea id="txtDescripcionOferta"></textarea>
+            </div>
+
+            <div class="form-grupo">
+                <label>Nivel requerido:</label>
+                <select id="slcNivelOferta">
+                    <option>Junior</option>
+                    <option>Semi-Senior</option>
+                    <option>Senior</option>
+                </select>
+            </div>
+
+            <div class="form-grupo">
+                <label>Área:</label>
+                <select id="slcAreaOferta">
+                    <option>Tecnología</option>
+                    <option>Diseño</option>
+                    <option>Marketing</option>
+                    <option>Administración</option>
+                    <option>Otros</option>
+                </select>
+            </div>
+
+            <div class="form-grupo">
+                <label>Límite de postulaciones:</label>
+                <input type="number" id="txtLimitePostulaciones">
+            </div>
+
+            <div class="form-grupo">
+                <label>Cantidad de vacantes:</label>
+                <input type="number" id="txtCantidadVacantes">
+            </div>
+
+            <div class="form-grupo">
+                <label>
+                    <input type="checkbox" id="chkOfertaDestacada"> Oferta destacada
+                </label>
+            </div>
+
+            <button type="button" id="btnCrearOferta" class="boton">Crear oferta</button>
+
+            <p id="pMensajeOferta" class="mt-2"></p>
+
+            <hr class="separador">
+            <a href="gestion_ofertas.html" class="btn-secundario">← Volver a Gestionar Ofertas</a>
+        </div>
+    </div>
+
+    <script src="js/ofertas.js"></script>
+    <script src="js/nav.js"></script>
+</body>
+</html>

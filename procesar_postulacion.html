@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Procesar postulación - Administrador</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body class="pagina-interna">
+
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">J<span class="mira-logo">⌖</span>bHunter</a>
+        </div>
+        
+        <ul class="nav-links">
+            <li id="liLogin"><a href="login.html">Iniciar Sesión</a></li>
+            <li id="liRegistro"><a href="registro.html">Crear Cuenta</a></li>
+            <li id="liOfertas"><a href="ofertas.html">Ofertas disponibles</a></li>
+            <li id="liDestacadas"><a href="ofertas_destacadas.html">Ofertas Destacadas</a></li>
+            <li id="liMisPostulaciones"><a href="mis_postulaciones.html">Mis Postulaciones</a></li>
+            <li id="liPendientes"><a href="postulaciones_pendientes.html">Postulaciones Pendientes</a></li>
+            <li id="liGestion"><a href="gestion_ofertas.html">Gestionar Ofertas</a></li>
+            <li id="liCrearOferta"><a href="crear_oferta.html">Crear Oferta</a></li>
+            <li id="liEstadisticas"><a href="estadisticas.html">Estadísticas</a></li>
+            <li id="liCerrarSesion"><a href="login.html" id="linkCerrarSesion">Cerrar Sesión</a></li>
+        </ul>
+    </nav>
+</header>
+
+    <div class="contenedor">
+        <h1>Procesar postulación</h1>
+        <p class="subtitulo">Revisa la información y aprobá o rechazá la postulación.</p>
+
+        <div class="card">
+            <p><strong>ID Postulación:</strong> <span id="lblIdPostulacion">JOB_1</span></p>
+            <p><strong>Postulante:</strong> <span id="lblPostulante">usuario1</span></p>
+            <p><strong>Oferta:</strong> <span id="lblOferta">Pasante Backend</span></p>
+            <p><strong>Empresa:</strong> <span id="lblEmpresa">Sabre</span></p>
+            <p><strong>Estado actual:</strong> <span id="lblEstado">Pendiente</span></p>
+
+            <hr class="separador">
+
+            <button type="button" class="boton" onclick="aprobarPostulacion()">Aprobar postulación</button>
+            <button type="button" class="boton boton-secundario" onclick="rechazarPostulacion()">Rechazar postulación</button>
+
+            <p id="pMensajeProcesar" class="mt-2"></p>
+
+            <hr class="separador">
+            <a href="postulaciones_pendientes.html" class="btn-secundario">← Volver a Postulaciones pendientes</a>
+        </div>
+    </div>
+
+    <script>
+        // Funciones placeholder para procesar postulaciones
+        function aprobarPostulacion() {
+            document.querySelector("#lblEstado").innerHTML = "Aceptada";
+            document.querySelector("#pMensajeProcesar").innerHTML = "La postulación fue aprobada (placeholder).";
+        }
+
+        function rechazarPostulacion() {
+            document.querySelector("#lblEstado").innerHTML = "Rechazada";
+            document.querySelector("#pMensajeProcesar").innerHTML = "La postulación fue rechazada (placeholder).";
+        }
+    </script>
+    <script src="js/nav.js"></script>
+</body>
+</html>
