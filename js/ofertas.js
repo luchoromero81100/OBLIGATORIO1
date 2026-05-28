@@ -258,11 +258,14 @@ function mostrarOfertasEnTablaPostulante() {
         // filtro: solo las activas
         if (ofertasLaborales[i].estado == "Activa") {
             textoTablaPostulante = textoTablaPostulante + "<tr>";
+            textoTablaPostulante = textoTablaPostulante + "<td>" + ofertasLaborales[i].id + "</td>";
             textoTablaPostulante = textoTablaPostulante + "<td>" + ofertasLaborales[i].titulo + "</td>";
             textoTablaPostulante = textoTablaPostulante + "<td>" + ofertasLaborales[i].empresa + "</td>";
             textoTablaPostulante = textoTablaPostulante + "<td>" + ofertasLaborales[i].descripcion + "</td>";
             textoTablaPostulante = textoTablaPostulante + "<td>" + ofertasLaborales[i].nivel + "</td>";
             textoTablaPostulante = textoTablaPostulante + "<td>" + ofertasLaborales[i].area + "</td>";
+            textoTablaPostulante = textoTablaPostulante + "<td>" + ofertasLaborales[i].vacantes + "</td>";
+            textoTablaPostulante = textoTablaPostulante + "<td>" + ofertasLaborales[i].limitePostulaciones + "</td>";
             textoTablaPostulante = textoTablaPostulante + "<td>";
             textoTablaPostulante = textoTablaPostulante + "<button type='button' class='boton boton-pequeno btn-postularme'>Postularme</button>";
             textoTablaPostulante = textoTablaPostulante + "</td>";
