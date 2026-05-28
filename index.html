@@ -5,6 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JobHunter - Inicio</title>
     <link rel="stylesheet" href="estilos.css">
+    <style>
+        /* Estilos rápidos para darle vida al Hero */
+        .hero {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            padding: 40px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        .hero-content {
+            flex: 1;
+        }
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: #2d3436;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: transform 0.2s;
+        }
+        .cta-button:hover {
+            transform: scale(1.05);
+            background-color: #0056b3;
+        }
+        .img-fluida {
+            max-width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .mision-destacada {
+            text-align: center;
+            background-color: #ffffff;
+            border-left: 5px solid #007bff;
+        }
+    </style>
 </head>
 <body class="pagina-interna">
 
@@ -13,52 +56,50 @@
         <div class="logo">
             <a href="index.html">J<span class="mira-logo">⌖</span>bHunter</a>
         </div>
-        
         <ul class="nav-links">
-            <li id="liLogin"><a href="login.html">Iniciar Sesión</a></li>
-            <li id="liRegistro"><a href="registro.html">Crear Cuenta</a></li>
-            <li id="liOfertas"><a href="ofertas.html">Ofertas disponibles</a></li>
-            <li id="liDestacadas"><a href="ofertas_destacadas.html">Ofertas Destacadas</a></li>
-            <li id="liMisPostulaciones"><a href="mis_postulaciones.html">Mis Postulaciones</a></li>
-            <li id="liPendientes"><a href="postulaciones_pendientes.html">Postulaciones Pendientes</a></li>
-            <li id="liGestion"><a href="gestion_ofertas.html">Gestionar Ofertas</a></li>
-            <li id="liCrearOferta"><a href="crear_oferta.html">Crear Oferta</a></li>
-            <li id="liEstadisticas"><a href="estadisticas.html">Estadísticas</a></li>
-            <li id="liCerrarSesion"><a href="login.html" id="linkCerrarSesion">Cerrar Sesión</a></li>
+            <li><a href="login.html">Iniciar Sesión</a></li>
+            <li><a href="registro.html" style="font-weight: bold;">Crear Cuenta</a></li>
+            <li><a href="ofertas.html" class="btn-destacado">Caza de Trabajo</a></li>
         </ul>
     </nav>
 </header>
 
     <div class="contenedor">
 
-        <div class="hero card">
+        <!-- Hero mejorado -->
+        <section class="hero card">
             <div class="hero-content">
-                <h1>Job Hunter</h1>
-                <p class="subtitulo">La plataforma donde los mejores talentos encuentran sus recompensas.</p>
-                <p>Gestiona tus postulaciones, descubre ofertas de alta demanda y da el siguiente paso en tu carrera profesional.</p>
+                <h1>Tu próximo gran paso, <br>empieza aquí.</h1>
+                <p class="subtitulo" style="font-size: 1.2rem; color: #636e72;">La plataforma donde los mejores talentos encuentran sus recompensas.</p>
+                <p>Gestiona tus postulaciones y descubre ofertas exclusivas. Tu futuro profesional merece un mejor lugar.</p>
+                <a href="registro.html" class="cta-button">¡Empieza ahora gratis!</a>
             </div>
             <div class="hero-image">
                 <img src="img/Imagen1.png" alt="Búsqueda de empleo" class="img-fluida">
             </div>
-        </div>
+        </section>
 
-        <div class="card">
-            <h2>Bienvenido</h2>
-            <p>Para comenzar, ingresá con tu cuenta o registrate como postulante.</p>
-            <ul class="lista-descrita">
-                <li>
-                    <a href="login.html"><strong>Iniciar Sesión</strong></a>
-                    <span>Accede a tu cuenta personal.</span>
-                </li>
-                <li>
-                    <a href="registro.html"><strong>Crear Cuenta</strong></a>
-                    <span>Registrate como postulante y empezá a postularte.</span>
-                </li>
-            </ul>
-        </div>
+        <!-- Misión con más énfasis -->
+        <section class="card mision-destacada">
+            <div class="mision-icono" style="font-size: 2.5rem; margin-bottom: 10px;">🎯</div>
+            <h2>🚀Nuestra Visión</h2>
+            <p class="texto-inspirador" style="font-style: italic; max-width: 800px; margin: 0 auto;">"Ser el puente definitivo entre el talento excepcional y las oportunidades que definen el futuro. Un ecosistema donde cada profesional encuentre su lugar ideal para crecer sin fronteras."</p>
+        </section>
+
+        <!-- Información con iconos simples -->
+        <section class="card" style="text-align: center;">
+            <h2>¿Dudas o consultas?</h2>
+            <div style="display: flex; justify-content: space-around; margin-top: 20px;">
+                <p>📧<strong>contacto@jobhunter.uy</strong></p>
+                <p>📱<strong>+598 2 123 4567</strong></p>
+            </div>
+        </section>
 
     </div>
 
-    <script src="js/nav.js"></script>
+    <footer style="text-align: center; padding: 2rem; margin-top: 2rem; border-top: 1px solid #ddd; color: #666;">
+        <p>&copy; 2026 JobHunter - Todos los derechos reservados.</p>
+    </footer>
+
 </body>
 </html>

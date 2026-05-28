@@ -241,6 +241,9 @@ function cerrarOferta(indice) {
 
 // tabla del postulante (ofertas.html)
 // solo muestro ofertas activas (las cerradas o inactivas no le interesan al postulante)
+// segun la letra: se muestran ofertas activas, compatibles con el nivel del postulante,
+// a las que no se haya postulado antes. Por defecto filtra por area de interes.
+// (la logica completa de filtrado se implementa mas adelante)
 function mostrarOfertasEnTablaPostulante() {
     let tablaPostulante = document.querySelector("#tbodyOfertasPostulante");
 
@@ -261,44 +264,68 @@ function mostrarOfertasEnTablaPostulante() {
             textoTablaPostulante = textoTablaPostulante + "<td>" + ofertasLaborales[i].nivel + "</td>";
             textoTablaPostulante = textoTablaPostulante + "<td>" + ofertasLaborales[i].area + "</td>";
             textoTablaPostulante = textoTablaPostulante + "<td>";
-            textoTablaPostulante = textoTablaPostulante + "<button type='button' class='boton boton-pequeno'>Postularme</button>";
+            textoTablaPostulante = textoTablaPostulante + "<button type='button' class='boton boton-pequeno btn-postularme'>Postularme</button>";
             textoTablaPostulante = textoTablaPostulante + "</td>";
             textoTablaPostulante = textoTablaPostulante + "</tr>";
         }
     }
 
     tablaPostulante.innerHTML = textoTablaPostulante;
+
+    // engancho los botones "Postularme" a un placeholder basico
+    // cuando se implemente de verdad, va a crear una postulacion con id JOB_nroAutoincremental
+    let botonesPostularme = document.querySelectorAll("#tbodyOfertasPostulante .btn-postularme");
+    for (let k = 0; k < botonesPostularme.length; k++) {
+        botonesPostularme[k].addEventListener("click", function () {
+            let mensaje = document.querySelector("#pMensajePostulacion");
+            if (mensaje != null) {
+                mensaje.innerHTML = "Postulación registrada como pendiente. (ID formato: JOB_nroAutoincremental)";
+                mensaje.style.color = "#057642";
+            }
+        });
+    }
 }
 
 
 // tabla de destacadas (ofertas_destacadas.html)
 // muestro solo las que estan marcadas como destacadas y que ademas siguen activas
 // (no quiero mostrar destacadas que esten cerradas)
+// ahora se muestran como cards con etiqueta urgente en vez de tabla
 function mostrarOfertasDestacadas() {
-    let tablaDestacadas = document.querySelector("#tbodyOfertasDestacadas");
+    let contenedorDestacadas = document.querySelector("#listaDestacadas");
 
-    if (tablaDestacadas == null) {
+    if (contenedorDestacadas == null) {
         return;
     }
 
-    let textoTablaDestacadas = "";
+    let textoDestacadas = "";
 
     for (let i = 0; i < ofertasLaborales.length; i++) {
         if (ofertasLaborales[i].destacada == "Sí" && ofertasLaborales[i].estado == "Activa") {
-            textoTablaDestacadas = textoTablaDestacadas + "<tr>";
-            textoTablaDestacadas = textoTablaDestacadas + "<td>" + ofertasLaborales[i].titulo + "</td>";
-            textoTablaDestacadas = textoTablaDestacadas + "<td>" + ofertasLaborales[i].empresa + "</td>";
-            textoTablaDestacadas = textoTablaDestacadas + "<td>" + ofertasLaborales[i].descripcion + "</td>";
-            textoTablaDestacadas = textoTablaDestacadas + "<td>" + ofertasLaborales[i].nivel + "</td>";
-            textoTablaDestacadas = textoTablaDestacadas + "<td>" + ofertasLaborales[i].area + "</td>";
-            textoTablaDestacadas = textoTablaDestacadas + "<td>";
-            textoTablaDestacadas = textoTablaDestacadas + "<button type='button' class='boton boton-pequeno'>Postularme</button>";
-            textoTablaDestacadas = textoTablaDestacadas + "</td>";
-            textoTablaDestacadas = textoTablaDestacadas + "</tr>";
+            textoDestacadas = textoDestacadas + "<div class='card-destacada'>";
+            textoDestacadas = textoDestacadas + "<span class='etiqueta-urgente'>¡URGENTE!</span>";
+            textoDestacadas = textoDestacadas + "<h3>" + ofertasLaborales[i].titulo + "</h3>";
+            textoDestacadas = textoDestacadas + "<p><strong>Empresa:</strong> " + ofertasLaborales[i].empresa + "</p>";
+            textoDestacadas = textoDestacadas + "<p><strong>Nivel requerido:</strong> " + ofertasLaborales[i].nivel + "</p>";
+            textoDestacadas = textoDestacadas + "<p>" + ofertasLaborales[i].descripcion + "</p>";
+            textoDestacadas = textoDestacadas + "<button type='button' class='boton btn-postularme-destacada'>Postularse Ahora</button>";
+            textoDestacadas = textoDestacadas + "</div>";
         }
     }
 
-    tablaDestacadas.innerHTML = textoTablaDestacadas;
+    contenedorDestacadas.innerHTML = textoDestacadas;
+
+    // placeholder para el boton postularme en destacadas
+    let botonesDestacadas = document.querySelectorAll(".btn-postularme-destacada");
+    for (let k = 0; k < botonesDestacadas.length; k++) {
+        botonesDestacadas[k].addEventListener("click", function () {
+            let mensaje = document.querySelector("#pMensajePostulacionDestacada");
+            if (mensaje != null) {
+                mensaje.innerHTML = "Postulación registrada como pendiente. (ID formato: JOB_nroAutoincremental)";
+                mensaje.style.color = "#057642";
+            }
+        });
+    }
 }
 
 

@@ -28,9 +28,10 @@
 </header>
     
     <div class="contenedor">
-        <h1>Estadísticas</h1>
+        <h1>Estadísticas del sistema</h1>
         <p class="subtitulo">Datos generales del sistema. Estas estadísticas son solo de lectura.</p>
 
+        <!-- A) Tabla de postulaciones por oferta -->
         <div class="card">
             <h3>Postulaciones por oferta</h3>
 
@@ -41,75 +42,108 @@
             </div>
 
             <table class="tabla" id="tablaEstadisticas">
-                <tr>
-                    <th>Oferta</th>
-                    <th>Empresa</th>
-                    <th>Cantidad de Postulaciones</th>
-                </tr>
-                <tr>
-                    <td>Pasante Backend</td>
-                    <td>Sabre</td>
-                    <td>2</td>
-                </tr>
-                <tr>
-                    <td>Desarrollador Full Stack</td>
-                    <td>Globant</td>
-                    <td>2</td>
-                </tr>
-                <tr>
-                    <td>Analista de Datos</td>
-                    <td>Mercado Libre</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>Ingeniero DevOps</td>
-                    <td>dLocal</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td>Diseñador UX/UI</td>
-                    <td>PedidosYa</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>Especialista en Marketing Digital</td>
-                    <td>Despegar</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>Consultor SAP Junior</td>
-                    <td>Accenture</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>Desarrollador Java</td>
-                    <td>TCS</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>Analista de Recursos Humanos</td>
-                    <td>Santander</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>Desarrollador GeneXus</td>
-                    <td>GeneXus</td>
-                    <td>0</td>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>Oferta</th>
+                        <th>Pendientes</th>
+                        <th>Aceptadas</th>
+                        <th>Rechazadas</th>
+                        <th>Total postulaciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Pasante Backend</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>Desarrollador Full Stack</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>Analista de Datos</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>Ingeniero DevOps</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>Diseñador UX/UI</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>Especialista en Marketing Digital</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>Consultor SAP Junior</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>Desarrollador Java</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>Analista de Recursos Humanos</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>Desarrollador GeneXus</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                </tbody>
             </table>
         </div>
 
+        <!-- C) Total de ofertas por estado -->
         <div class="card mt-3">
-            <h3>Resumen de Ofertas</h3>
-            <p><strong>Total Activas:</strong> 10</p>
-            <p><strong>Total Inactivas:</strong> 2</p>
-            <p><strong>Total Cerradas:</strong> 3</p>
+            <h3>Total de ofertas por estado</h3>
+            <p><strong>Activas:</strong> 8</p>
+            <p><strong>Inactivas:</strong> 1</p>
+            <p><strong>Cerradas:</strong> 1</p>
         </div>
 
+        <!-- D) Porcentaje de vacantes cubiertas -->
         <div class="card mt-3">
-            <h3>Otros datos</h3>
-            <p><strong>Porcentaje de vacantes cubiertas:</strong> 48%</p>
-            <p><strong>Postulante con más postulaciones activas:</strong> usuario1</p>
+            <h3>Porcentaje de vacantes cubiertas</h3>
+            <p><strong>Vacantes cubiertas / Total de vacantes ofrecidas:</strong> 4 / 22 = 18%</p>
+        </div>
+
+        <!-- E) Postulante con más postulaciones activas -->
+        <div class="card mt-3">
+            <h3>Postulante con más postulaciones activas</h3>
+            <p><strong>usuario1</strong> — 3 postulaciones en estado Pendiente</p>
         </div>
     </div>
 

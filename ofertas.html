@@ -31,7 +31,13 @@
 
     <div class="contenedor">
         <h1>Ofertas disponibles</h1>
-        <p class="subtitulo">Listado de ofertas activas a las que te podés postular.</p>
+        <p class="subtitulo">Se muestran ofertas activas, compatibles con tu nivel de experiencia y a las que aún no te postulaste. Por defecto se filtran por tu área de interés.</p>
+
+        <div class="card" style="margin-bottom: 20px; padding: 1rem 2rem;">
+            <label>
+                <input type="checkbox" id="chkVerTodasOfertas"> Ver todas las ofertas compatibles (sin filtrar por mi área)
+            </label>
+        </div>
 
         <div class="buscador-container" style="margin-bottom: 20px;">
             <input type="text" id="buscadorOfertas"
@@ -57,6 +63,8 @@
                 </table>
             </div>
         </div>
+
+        <p id="pMensajePostulacion" class="mt-2"></p>
     </div>
 
     <script src="js/ofertas.js"></script>
