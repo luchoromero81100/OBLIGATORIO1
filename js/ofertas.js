@@ -287,10 +287,9 @@ function mostrarOfertasEnTablaPostulante() {
 }
 
 
-// tabla de destacadas (ofertas_destacadas.html)
-// muestro solo las que estan marcadas como destacadas y que ademas siguen activas
-// (no quiero mostrar destacadas que esten cerradas)
-// ahora se muestran como cards con etiqueta urgente en vez de tabla
+// ofertas destacadas (ofertas_destacadas.html)
+// muestro solo las que estan marcadas como destacadas, activas y que no alcanzaron el limite
+// cada card muestra todos los campos que pide la consigna
 function mostrarOfertasDestacadas() {
     let contenedorDestacadas = document.querySelector("#listaDestacadas");
 
@@ -299,18 +298,37 @@ function mostrarOfertasDestacadas() {
     }
 
     let textoDestacadas = "";
+    let hayDestacadas = false;
 
     for (let i = 0; i < ofertasLaborales.length; i++) {
-        if (ofertasLaborales[i].destacada == "Sí" && ofertasLaborales[i].estado == "Activa") {
+        // filtro: destacada, activa y que no haya alcanzado el limite de postulaciones
+        // por ahora no tengo un contador real de postulaciones por oferta,
+        // asi que uso el limite como referencia (si limite > 0 se puede postular)
+        let esDestacada = ofertasLaborales[i].destacada == "Sí";
+        let estaActiva = ofertasLaborales[i].estado == "Activa";
+        let tieneVacantes = parseInt(ofertasLaborales[i].vacantes) > 0;
+        let permitePosutlaciones = parseInt(ofertasLaborales[i].limitePostulaciones) > 0;
+
+        if (esDestacada && estaActiva && tieneVacantes && permitePosutlaciones) {
+            hayDestacadas = true;
             textoDestacadas = textoDestacadas + "<div class='card-destacada'>";
-            textoDestacadas = textoDestacadas + "<span class='etiqueta-urgente'>¡URGENTE!</span>";
+            textoDestacadas = textoDestacadas + "<span class='etiqueta-urgente'>⭐ DESTACADA</span>";
             textoDestacadas = textoDestacadas + "<h3>" + ofertasLaborales[i].titulo + "</h3>";
+            textoDestacadas = textoDestacadas + "<p><strong>ID:</strong> " + ofertasLaborales[i].id + "</p>";
             textoDestacadas = textoDestacadas + "<p><strong>Empresa:</strong> " + ofertasLaborales[i].empresa + "</p>";
+            textoDestacadas = textoDestacadas + "<p><strong>Descripción:</strong> " + ofertasLaborales[i].descripcion + "</p>";
             textoDestacadas = textoDestacadas + "<p><strong>Nivel requerido:</strong> " + ofertasLaborales[i].nivel + "</p>";
-            textoDestacadas = textoDestacadas + "<p>" + ofertasLaborales[i].descripcion + "</p>";
-            textoDestacadas = textoDestacadas + "<button type='button' class='boton btn-postularme-destacada'>Postularse Ahora</button>";
+            textoDestacadas = textoDestacadas + "<p><strong>Área:</strong> " + ofertasLaborales[i].area + "</p>";
+            textoDestacadas = textoDestacadas + "<p><strong>Vacantes:</strong> " + ofertasLaborales[i].vacantes + "</p>";
+            textoDestacadas = textoDestacadas + "<p><strong>Límite de postulaciones:</strong> " + ofertasLaborales[i].limitePostulaciones + "</p>";
+            textoDestacadas = textoDestacadas + "<p><strong>Destacada:</strong> Sí</p>";
+            textoDestacadas = textoDestacadas + "<button type='button' class='boton btn-postularme-destacada'>Postularme</button>";
             textoDestacadas = textoDestacadas + "</div>";
         }
+    }
+
+    if (hayDestacadas == false) {
+        textoDestacadas = "<p>No hay ofertas destacadas disponibles.</p>";
     }
 
     contenedorDestacadas.innerHTML = textoDestacadas;
